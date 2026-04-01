@@ -15,20 +15,24 @@
   --color-card-bg: #0F0F12;
   
   /* Precision Spacing System */
-  --spacing-section-y: 140px;
-  --spacing-container-x: 5%;
-  --spacing-element: 24px;
+  --spacing-section-y: 120px;
+  --spacing-container-x: 6%;
+  --spacing-element: 20px;
   --spacing-grid-gap: 32px;
   
-  /* Typography */
+  /* Typography Scale - Slightly Reduced for Balance */
   --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --h1-size: clamp(2.5rem, 8vw, 4rem);
+  --h2-size: clamp(1.8rem, 5vw, 2.5rem);
+  --h3-size: clamp(1.2rem, 3vw, 1.4rem);
+  --body-size: 1.05rem;
   
   /* Shape & Elevation */
   --border-radius-card: 16px;
   --border-radius-visual: 24px;
   
-  --shadow-subtle: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --shadow-premium: 0 16px 64px rgba(0, 0, 0, 0.6);
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-premium: 0 16px 64px rgba(0, 0, 0, 0.5);
 }
 
 /* Base Reset */
@@ -42,53 +46,53 @@ body {
   font-family: var(--font-family-base);
   background-color: var(--color-bg-primary);
   color: var(--color-text-main);
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  word-break: keep-all; /* Prevent awkward mid-word breaks in Korean */
+  overflow-wrap: break-word;
 }
 
 /* Typography Hierarchy */
 h1, h2, h3, h4 {
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--color-text-main);
+  line-height: 1.25;
 }
 
 .hero-headline {
-  font-size: 4.5rem;
-  line-height: 1.1;
+  font-size: var(--h1-size);
   margin-bottom: var(--spacing-element);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
 }
 
 h2 {
-  font-size: 2.75rem;
+  font-size: var(--h2-size);
   margin-bottom: 12px;
-  font-weight: 600;
 }
 
 h3 {
-  font-size: 1.25rem;
-  margin-bottom: 16px;
-  font-weight: 600;
+  font-size: var(--h3-size);
+  margin-bottom: 14px;
 }
 
 p {
-  font-size: 1.125rem;
+  font-size: var(--body-size);
   color: var(--color-text-muted);
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--color-text-muted);
-  margin-bottom: 64px;
+  margin-bottom: 56px;
   font-weight: 400;
 }
 
 /* Layout System */
 .container {
-  max-width: 1200px;
+  max-width: 1280px; /* Increased for better line flow */
   margin: 0 auto;
   padding: 0 var(--spacing-container-x);
 }
@@ -895,8 +899,12 @@ p {
 .cover-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Changed to contain to avoid cut-off for hardware */
   display: block;
+}
+
+.cover-img.bg-fill {
+  object-fit: cover; /* Fallback for backgrounds only */
 }
 
 .contain-img {
