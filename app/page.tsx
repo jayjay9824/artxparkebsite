@@ -134,7 +134,7 @@ function Nav() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden sm:flex" style={{ gap: 34, alignItems: "center", display: "flex" }}>
+        <nav className="hidden sm:flex" style={{ gap: 34, alignItems: "center" }}>
           {links.map(([label, href]) => (
             <a
               key={href}
@@ -654,7 +654,7 @@ function Hero() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: "120px 32px 80px",
+        padding: "clamp(88px, 12vw, 120px) clamp(20px, 4vw, 32px) clamp(60px, 8vw, 80px)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto", width: "100%" }}>
@@ -794,7 +794,7 @@ function Hero() {
 ════════════════════════════════════════ */
 function ArtenaOverview() {
   return (
-    <section id="artena" style={{ background: "var(--surface)", padding: "120px 32px" }}>
+    <section id="artena" style={{ background: "var(--surface)", padding: "clamp(64px, 10vw, 120px) clamp(20px, 4vw, 32px)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div
           className="grid grid-cols-1 md:grid-cols-2 items-center"
@@ -1008,7 +1008,7 @@ function WhyArtena() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section style={{ background: "#fafafa", padding: "136px 32px" }}>
+    <section style={{ background: "#fafafa", padding: "clamp(64px, 11vw, 136px) clamp(20px, 4vw, 32px)" }}>
       <div ref={ref} style={{ maxWidth: 1100, margin: "0 auto" }}>
 
         {/* ── Intro block ── */}
@@ -1114,7 +1114,7 @@ function Ecosystem() {
   ];
 
   return (
-    <section id="ecosystem" style={{ background: "var(--surface)", padding: "120px 32px" }}>
+    <section id="ecosystem" style={{ background: "var(--surface)", padding: "clamp(64px, 10vw, 120px) clamp(20px, 4vw, 32px)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <Fade>
           <Label>Ecosystem</Label>
@@ -1222,7 +1222,7 @@ function About() {
       style={{
         background: "var(--dark-bg)",
         color: "var(--dark-fg)",
-        padding: "120px 32px",
+        padding: "clamp(64px, 10vw, 120px) clamp(20px, 4vw, 32px)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -1400,7 +1400,7 @@ function TBullet({ children }: { children: React.ReactNode }) {
 
 function Team() {
   return (
-    <section id="team" style={{ background: "#fff", padding: "120px 32px" }}>
+    <section id="team" style={{ background: "#fff", padding: "clamp(64px, 10vw, 120px) clamp(20px, 4vw, 32px)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         {/* Section title */}
@@ -1442,7 +1442,7 @@ function Team() {
             style={{
               border: "1px solid var(--border)",
               borderRadius: 14,
-              padding: "44px 40px",
+              padding: "clamp(28px, 4vw, 44px) clamp(20px, 3.5vw, 40px)",
               marginBottom: 16,
               position: "relative",
               overflow: "hidden",
@@ -1529,7 +1529,7 @@ function Team() {
             style={{
               border: "1px solid var(--border)",
               borderRadius: 14,
-              padding: "36px 40px",
+              padding: "clamp(24px, 3.5vw, 36px) clamp(20px, 3.5vw, 40px)",
               marginBottom: 80,
             }}
           >
@@ -1752,7 +1752,7 @@ function Footer() {
       style={{
         background: "var(--surface)",
         borderTop: "1px solid var(--border)",
-        padding: "44px 32px",
+        padding: "clamp(32px, 4vw, 44px) clamp(20px, 4vw, 32px)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -1795,7 +1795,7 @@ function Footer() {
           </p>
 
           {/* Nav links */}
-          <nav className="hidden sm:flex" style={{ gap: 28, display: "flex" }}>
+          <nav className="hidden sm:flex" style={{ gap: 28 }}>
             {[
               ["ARTENA AI", "#artena"],
               ["Ecosystem", "#ecosystem"],
