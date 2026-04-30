@@ -800,7 +800,7 @@ function ArtenaOverview() {
           className="grid grid-cols-1 md:grid-cols-2 items-center"
           style={{ gap: "clamp(40px, 6vw, 88px)" }}
         >
-          {/* Left: artena_ai.jpg */}
+          {/* Left: ARTENA AI logo */}
           <Fade>
             <div
               style={{
