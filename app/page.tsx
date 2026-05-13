@@ -81,7 +81,7 @@ function Nav() {
   }, []);
 
   const links: [string, string][] = [
-    ["ARTENA AI", "#artena"],
+    ["AXVELA AI", "#axvela"],
     ["Ecosystem", "#ecosystem"],
     ["About", "#about"],
     ["Team", "#team"],
@@ -349,7 +349,7 @@ function HeroChatPanel() {
             marginLeft: 4,
           }}
         >
-          ARTENA AI
+          AXVELA AI
         </span>
         <span
           style={{
@@ -391,7 +391,7 @@ function HeroChatPanel() {
           }}
         >
           <Image
-            src="/images/artena_logo.png"
+            src="/images/axvela_logo_wh.png"
             alt=""
             width={320}
             height={320}
@@ -399,8 +399,7 @@ function HeroChatPanel() {
               width: "82%",
               height: "auto",
               objectFit: "contain",
-              opacity: 0.4,
-              mixBlendMode: "multiply" as const,
+              opacity: 0.08,
               userSelect: "none",
             }}
           />
@@ -556,7 +555,7 @@ function HeroChatPanel() {
                         fontStyle: "italic",
                       }}
                     >
-                      This interpretation evolves as ARTENA learns from broader cultural
+                      This interpretation evolves as AXVELA learns from broader cultural
                       data and user interaction.
                     </p>
                   </div>
@@ -681,7 +680,7 @@ function Hero() {
                   color: "var(--fg)",
                 }}
               >
-                ARTENA AI
+                AXVELA AI
               </h1>
               <p
                 style={{
@@ -714,7 +713,7 @@ function Hero() {
             </Fade>
             <Fade delay={280}>
               <a
-                href="#artena"
+                href="#axvela"
                 style={{
                   display: "inline-block",
                   padding: "13px 30px",
@@ -727,12 +726,12 @@ function Hero() {
                   letterSpacing: "0.01em",
                 }}
               >
-                Explore ARTENA AI
+                Explore AXVELA AI
               </a>
             </Fade>
           </div>
 
-          {/* Right: ARTENA AI chat panel */}
+          {/* Right: AXVELA AI chat panel */}
           <Fade delay={120}>
             <HeroChatPanel />
           </Fade>
@@ -752,7 +751,7 @@ function Hero() {
             {[
               {
                 label: "Core Product",
-                title: "ARTENA AI",
+                title: "AXVELA AI",
                 desc: "Understands and explains art through interaction",
               },
               {
@@ -790,17 +789,17 @@ function Hero() {
 }
 
 /* ════════════════════════════════════════
-   2. ARTENA AI OVERVIEW
+   2. AXVELA AI OVERVIEW
 ════════════════════════════════════════ */
-function ArtenaOverview() {
+function AxvelaOverview() {
   return (
-    <section id="artena" style={{ background: "var(--surface)", padding: "clamp(64px, 10vw, 120px) clamp(20px, 4vw, 32px)" }}>
+    <section id="axvela" style={{ background: "var(--surface)", padding: "clamp(64px, 10vw, 120px) clamp(20px, 4vw, 32px)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div
           className="grid grid-cols-1 md:grid-cols-2 items-center"
           style={{ gap: "clamp(40px, 6vw, 88px)" }}
         >
-          {/* Left: ARTENA AI logo */}
+          {/* Left: AXVELA AI logo */}
           <Fade>
             <div
               style={{
@@ -811,8 +810,8 @@ function ArtenaOverview() {
               }}
             >
               <Image
-                src="/images/artena_logo.png"
-                alt="ARTENA AI — Cultural Intelligence System"
+                src="/images/axvela_logo_wh.png"
+                alt="AXVELA AI — Cultural Intelligence System"
                 fill
                 style={{ objectFit: "contain" }}
               />
@@ -822,7 +821,7 @@ function ArtenaOverview() {
           {/* Right: Text */}
           <div>
             <Fade>
-              <Label>ARTENA AI</Label>
+              <Label>AXVELA AI</Label>
             </Fade>
             <Fade delay={80}>
               <h2
@@ -849,7 +848,7 @@ function ArtenaOverview() {
                   marginBottom: 20,
                 }}
               >
-                ARTENA AI is designed from the ground up for artworks, exhibitions,
+                AXVELA AI is designed from the ground up for artworks, exhibitions,
                 and cultural context — not repurposed from generic AI models. Domain
                 knowledge is foundational, not bolted on.
               </p>
@@ -876,7 +875,7 @@ function ArtenaOverview() {
                   color: "var(--body)",
                 }}
               >
-                ARTENA AI does not merely retrieve information — it builds structured
+                AXVELA AI does not merely retrieve information — it builds structured
                 cultural knowledge, improving through data, context, and real-world
                 interaction with the art ecosystem.
               </p>
@@ -889,7 +888,7 @@ function ArtenaOverview() {
 }
 
 /* ════════════════════════════════════════
-   3. WHY ARTENA AI
+   3. WHY AXVELA AI
 ════════════════════════════════════════ */
 const WHY_FEATURES = [
   {
@@ -898,11 +897,11 @@ const WHY_FEATURES = [
   },
   {
     title: "Learning-Driven",
-    desc: "Every scan, exhibition, and transaction makes ARTENA AI more accurate. Intelligence compounds with every asset it processes.",
+    desc: "Every scan, exhibition, and transaction makes AXVELA AI more accurate. Intelligence compounds with every asset it processes.",
   },
   {
     title: "Context-Aware Interpretation",
-    desc: "ARTENA AI understands cultural significance, provenance weight, and condition nuance — not just pattern recognition on surface features.",
+    desc: "AXVELA AI understands cultural significance, provenance weight, and condition nuance — not just pattern recognition on surface features.",
   },
   {
     title: "Ecosystem-Connected",
@@ -941,7 +940,7 @@ const cardsContainerVariants = {
   },
 };
 
-function WhyArtenаCard({ feature }: { feature: typeof WHY_FEATURES[0] }) {
+function WhyAxvelaCard({ feature }: { feature: typeof WHY_FEATURES[0] }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -1003,7 +1002,7 @@ function WhyArtenаCard({ feature }: { feature: typeof WHY_FEATURES[0] }) {
   );
 }
 
-function WhyArtena() {
+function WhyAxvela() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -1027,7 +1026,7 @@ function WhyArtena() {
                 fontWeight: 600,
               }}
             >
-              Why ARTENA AI
+              Why AXVELA AI
             </span>
           </motion.div>
 
@@ -1059,7 +1058,7 @@ function WhyArtena() {
             }}
           >
             Generic AI cannot determine what makes a Basquiat authentic or a Song
-            Dynasty vase significant. ARTENA AI can — and it keeps getting better
+            Dynasty vase significant. AXVELA AI can — and it keeps getting better
             with every interaction.
           </motion.p>
         </motion.div>
@@ -1073,7 +1072,7 @@ function WhyArtena() {
           style={{ gap: 16 }}
         >
           {WHY_FEATURES.map((f) => (
-            <WhyArtenаCard key={f.title} feature={f} />
+            <WhyAxvelaCard key={f.title} feature={f} />
           ))}
         </motion.div>
 
@@ -1128,7 +1127,7 @@ function Ecosystem() {
               color: "var(--fg)",
             }}
           >
-            Infrastructure that feeds ARTENA AI.
+            Infrastructure that feeds AXVELA AI.
           </h2>
           <p
             style={{
@@ -1141,7 +1140,7 @@ function Ecosystem() {
           >
             ArtXscan, ArtXdrone, and ArtXbot are not separate products. They are
             the physical intelligence layer — generating the verified real-world
-            data that ARTENA AI learns from and operates on.
+            data that AXVELA AI learns from and operates on.
           </p>
         </Fade>
 
@@ -1263,7 +1262,7 @@ function About() {
             >
               &ldquo;Culture holds some of the most irreplaceable value humans have
               ever created. It deserves the same data infrastructure we have built for
-              financial markets — and ARTENA AI is how we get there.&rdquo;
+              financial markets — and AXVELA AI is how we get there.&rdquo;
             </p>
             <p
               style={{
@@ -1292,7 +1291,7 @@ function About() {
               ArtXpark is an AI technology company headquartered in Seoul, Korea.
               Founded at the intersection of art history, AI systems architecture, and
               physical asset markets, ArtXpark is focused on one mission: building
-              ARTENA AI as the canonical intelligence infrastructure for the global
+              AXVELA AI as the canonical intelligence infrastructure for the global
               cultural asset market.
             </p>
             <p
@@ -1321,7 +1320,7 @@ function About() {
           >
             {[
               { label: "Founded", value: "Seoul, Korea" },
-              { label: "Core Product", value: "ARTENA AI" },
+              { label: "Core Product", value: "AXVELA AI" },
               { label: "Market Focus", value: "Cultural Assets" },
               { label: "Domain", value: "AI Infrastructure" },
             ].map((stat) => (
@@ -1727,7 +1726,7 @@ function Footer() {
           {/* Nav links */}
           <nav className="hidden sm:flex" style={{ gap: 28 }}>
             {[
-              ["ARTENA AI", "#artena"],
+              ["AXVELA AI", "#axvela"],
               ["Ecosystem", "#ecosystem"],
               ["About", "#about"],
               ["Team", "#team"],
@@ -1760,8 +1759,8 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <ArtenaOverview />
-        <WhyArtena />
+        <AxvelaOverview />
+        <WhyAxvela />
         <Ecosystem />
         <About />
         <Team />
