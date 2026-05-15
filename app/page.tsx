@@ -82,6 +82,7 @@ function Nav() {
 
   const links: [string, string][] = [
     ["AXVELA AI", "#axvela"],
+    ["AI Glass", "#ai-glass"],
     ["Ecosystem", "#ecosystem"],
     ["About", "#about"],
     ["Team", "#team"],
@@ -1082,6 +1083,231 @@ function WhyAxvela() {
 }
 
 /* ════════════════════════════════════════
+   3.5  AXVELA AI GLASS
+════════════════════════════════════════ */
+const AI_GLASS_FEATURES = [
+  {
+    title: "Real-time Recognition",
+    lines: ["작품을 보는 즉시 인식", "음성으로 질문, 즉시 응답"],
+  },
+  {
+    title: "Contextual Overlay",
+    lines: ["작가·시대·시장·관람객 반응", "시야 안에 자연스럽게 표시"],
+  },
+  {
+    title: "Continuous Learning",
+    lines: [
+      "관람 데이터가 AI를 학습시킴",
+      "볼수록 더 정밀해지는 Cultural Intelligence",
+    ],
+  },
+];
+
+function AIGlass() {
+  return (
+    <section
+      id="ai-glass"
+      style={{
+        background: "var(--dark-bg)",
+        color: "var(--dark-fg)",
+        padding: "clamp(64px, 10vw, 120px) clamp(20px, 4vw, 32px)",
+        overflow: "hidden",
+      }}
+    >
+      {/* ── Heading + two-column experience ── */}
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <Fade>
+          <Label light>AXVELA AI Glass</Label>
+          <h2
+            style={{
+              fontSize: "clamp(28px, 3.5vw, 46px)",
+              fontWeight: 600,
+              letterSpacing: "-0.028em",
+              lineHeight: 1.13,
+              marginTop: 16,
+              marginBottom: 14,
+              color: "#fff",
+            }}
+          >
+            Look. Ask. Understand.
+          </h2>
+          <p
+            style={{
+              fontSize: 16,
+              color: "#9a9a9a",
+              maxWidth: 560,
+              marginBottom: 64,
+              lineHeight: 1.75,
+            }}
+          >
+            Cultural Intelligence, in your line of sight.
+          </p>
+        </Fade>
+
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 items-center"
+          style={{ gap: "clamp(40px, 6vw, 88px)" }}
+        >
+          {/* Left: user wearing AR glass */}
+          <Fade>
+            <div
+              className="group"
+              style={{
+                position: "relative",
+                aspectRatio: "4/5",
+                borderRadius: 24,
+                overflow: "hidden",
+                border: "1px solid rgba(255,255,255,0.06)",
+                boxShadow:
+                  "0 30px 80px -30px rgba(0,0,0,0.8), 0 12px 32px -12px rgba(196,169,110,0.12)",
+              }}
+            >
+              <Image
+                src="/images/axvela_glass_experience.png"
+                alt="A viewer wearing AXVELA AI Glass to read an artwork"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </Fade>
+
+          {/* Right: copy block */}
+          <Fade delay={100}>
+            <div style={{ maxWidth: 460 }}>
+              <p
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.85,
+                  color: "#cfcfcf",
+                  marginBottom: 22,
+                  fontWeight: 300,
+                }}
+              >
+                작품을 응시하는 순간, AXVELA AI가 작품을 인식하고 해설합니다.
+              </p>
+              <p
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.85,
+                  color: "#cfcfcf",
+                  marginBottom: 22,
+                  fontWeight: 300,
+                }}
+              >
+                음성으로 묻고, 시야 안에서 답을 받습니다.
+              </p>
+              <p
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.85,
+                  color: "#cfcfcf",
+                  margin: 0,
+                  fontWeight: 300,
+                }}
+              >
+                관람의 모든 순간이 데이터가 되고, 데이터는 다시 더 정교한
+                Cultural Intelligence로 돌아옵니다.
+              </p>
+            </div>
+          </Fade>
+        </div>
+      </div>
+
+      {/* ── Full-bleed POV ── */}
+      <Fade>
+        <div
+          style={{
+            maxWidth: 1600,
+            margin: "clamp(56px, 8vw, 104px) auto 0",
+          }}
+        >
+          <div
+            className="group"
+            style={{
+              position: "relative",
+              aspectRatio: "16/9",
+              borderRadius: 24,
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.06)",
+              boxShadow:
+                "0 40px 120px -30px rgba(196,169,110,0.18), 0 30px 100px -30px rgba(0,0,0,0.9)",
+            }}
+          >
+            <Image
+              src="/images/axvela_glass_pov.png"
+              alt="AXVELA AI overlay on artwork — Cultural Intelligence in AR view"
+              fill
+              sizes="100vw"
+              className="transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <p
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase" as const,
+              color: "#6a6a6a",
+              fontWeight: 500,
+              textAlign: "center",
+              marginTop: 22,
+            }}
+          >
+            Real World · Real Culture · Real Intelligence.
+          </p>
+        </div>
+      </Fade>
+
+      {/* ── 3-feature grid ── */}
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div
+          className="grid grid-cols-1 sm:grid-cols-3"
+          style={{
+            marginTop: "clamp(56px, 7vw, 96px)",
+            paddingTop: 40,
+            borderTop: "1px solid #1a1a1a",
+            gap: "clamp(28px, 4vw, 48px)",
+          }}
+        >
+          {AI_GLASS_FEATURES.map((item, i) => (
+            <Fade key={item.title} delay={i * 80}>
+              <div>
+                <p
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: "#fff",
+                    letterSpacing: "-0.015em",
+                    marginBottom: 14,
+                  }}
+                >
+                  {item.title}
+                </p>
+                {item.lines.map((line) => (
+                  <p
+                    key={line}
+                    style={{
+                      fontSize: 14,
+                      color: "#8a8a8a",
+                      lineHeight: 1.75,
+                      margin: 0,
+                    }}
+                  >
+                    {line}
+                  </p>
+                ))}
+              </div>
+            </Fade>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════
    4. ECOSYSTEM
 ════════════════════════════════════════ */
 function Ecosystem() {
@@ -1727,6 +1953,7 @@ function Footer() {
           <nav className="hidden sm:flex" style={{ gap: 28 }}>
             {[
               ["AXVELA AI", "#axvela"],
+              ["AI Glass", "#ai-glass"],
               ["Ecosystem", "#ecosystem"],
               ["About", "#about"],
               ["Team", "#team"],
@@ -1761,6 +1988,7 @@ export default function Home() {
         <Hero />
         <AxvelaOverview />
         <WhyAxvela />
+        <AIGlass />
         <Ecosystem />
         <About />
         <Team />
