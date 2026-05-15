@@ -1087,19 +1087,25 @@ function WhyAxvela() {
 ════════════════════════════════════════ */
 const AI_GLASS_FEATURES = [
   {
+    num: "01",
     title: "Real-time Recognition",
-    lines: ["작품을 보는 즉시 인식", "음성으로 질문, 즉시 응답"],
+    subtitle: "실시간 인식",
+    description:
+      "작품을 시야에 두는 즉시 AXVELA AI가 작품을 식별합니다. 별도의 검색이나 입력 없이, 음성으로 묻는 순간 작가·시대·재료·이력이 곧바로 응답됩니다. 갤러리 동선을 끊지 않고, 관람의 흐름 안에서 작품을 이해합니다.",
   },
   {
+    num: "02",
     title: "Contextual Overlay",
-    lines: ["작가·시대·시장·관람객 반응", "시야 안에 자연스럽게 표시"],
+    subtitle: "컨텍스트 오버레이",
+    description:
+      "시장 가격·관람객 반응·유사 작품 비교가 시야 안에 자연스럽게 떠오릅니다. 단순한 정보 표시가 아니라, 작품을 보는 시선을 가리지 않는 위치에 큐레이션됩니다. 보고 싶을 때만 보이고, 집중할 때는 사라집니다.",
   },
   {
+    num: "03",
     title: "Continuous Learning",
-    lines: [
-      "관람 데이터가 AI를 학습시킴",
-      "볼수록 더 정밀해지는 Cultural Intelligence",
-    ],
+    subtitle: "지속 학습",
+    description:
+      "모든 관람 데이터—머문 시간, 다시 본 작품, 비교한 작품—는 AXVELA AI를 더 정교하게 만듭니다. Cultural Intelligence는 사용자가 늘어날수록 깊어지고, 컬렉터와 갤러리에게 더 정확한 인사이트로 돌아옵니다.",
   },
 ];
 
@@ -1110,22 +1116,22 @@ function AIGlass() {
       style={{
         background: "var(--dark-bg)",
         color: "var(--dark-fg)",
-        padding: "clamp(64px, 10vw, 120px) clamp(20px, 4vw, 32px)",
+        padding: "clamp(80px, 12vw, 140px) clamp(20px, 4vw, 32px)",
         overflow: "hidden",
       }}
     >
-      {/* ── Heading + two-column experience ── */}
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        {/* ── Section Header ── */}
         <Fade>
           <Label light>AXVELA AI Glass</Label>
           <h2
             style={{
-              fontSize: "clamp(28px, 3.5vw, 46px)",
+              fontSize: "clamp(30px, 4vw, 52px)",
               fontWeight: 600,
               letterSpacing: "-0.028em",
               lineHeight: 1.13,
-              marginTop: 16,
-              marginBottom: 14,
+              marginTop: 18,
+              marginBottom: 24,
               color: "#fff",
             }}
           >
@@ -1133,33 +1139,78 @@ function AIGlass() {
           </h2>
           <p
             style={{
-              fontSize: 16,
-              color: "#9a9a9a",
-              maxWidth: 560,
-              marginBottom: 64,
-              lineHeight: 1.75,
+              fontSize: 17,
+              lineHeight: 1.8,
+              color: "#a8a8a8",
+              maxWidth: 720,
+              marginBottom: "clamp(48px, 6vw, 72px)",
+              fontWeight: 300,
             }}
           >
-            Cultural Intelligence, in your line of sight.
+            AXVELA AI Glass는 작품을 응시하는 순간 작품을 인식하고 해설하는
+            웨어러블 Cultural Intelligence입니다. 갤러리·미술관·전시장에서
+            별도의 검색이나 디바이스 조작 없이, 시야 안에서 모든 정보를
+            받습니다.
           </p>
         </Fade>
 
+        {/* ── Hero POV image (contained, no full-bleed) ── */}
+        <Fade>
+          <div
+            className="group"
+            style={{
+              position: "relative",
+              aspectRatio: "16 / 10",
+              borderRadius: 20,
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.08)",
+              boxShadow:
+                "0 40px 120px -30px rgba(0,0,0,0.9), 0 20px 60px -20px rgba(196,169,110,0.10)",
+            }}
+          >
+            <Image
+              src="/images/axvela_glass_pov.png"
+              alt="AXVELA AI overlay on artwork — Cultural Intelligence in AR view"
+              fill
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              className="transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <p
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase" as const,
+              color: "#6a6a6a",
+              fontWeight: 500,
+              textAlign: "center",
+              marginTop: 24,
+            }}
+          >
+            Real World · Real Culture · Real Intelligence.
+          </p>
+        </Fade>
+
+        {/* ── The Experience: image + narrative copy ── */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 items-center"
-          style={{ gap: "clamp(40px, 6vw, 88px)" }}
+          style={{
+            gap: "clamp(40px, 6vw, 80px)",
+            marginTop: "clamp(80px, 10vw, 120px)",
+            marginBottom: "clamp(80px, 10vw, 120px)",
+          }}
         >
-          {/* Left: user wearing AR glass */}
           <Fade>
             <div
               className="group"
               style={{
                 position: "relative",
-                aspectRatio: "4/5",
-                borderRadius: 24,
+                aspectRatio: "4 / 5",
+                borderRadius: 20,
                 overflow: "hidden",
-                border: "1px solid rgba(255,255,255,0.06)",
-                boxShadow:
-                  "0 30px 80px -30px rgba(0,0,0,0.8), 0 12px 32px -12px rgba(196,169,110,0.12)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                boxShadow: "0 30px 80px -30px rgba(0,0,0,0.8)",
               }}
             >
               <Image
@@ -1173,134 +1224,145 @@ function AIGlass() {
             </div>
           </Fade>
 
-          {/* Right: copy block */}
           <Fade delay={100}>
-            <div style={{ maxWidth: 460 }}>
+            <div>
               <p
                 style={{
-                  fontSize: 18,
+                  fontSize: 11,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase" as const,
+                  color: "#c4a96e",
+                  fontWeight: 500,
+                  marginBottom: 18,
+                }}
+              >
+                The Experience
+              </p>
+              <h3
+                style={{
+                  fontSize: "clamp(22px, 2.6vw, 32px)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.022em",
+                  lineHeight: 1.3,
+                  color: "#fff",
+                  marginBottom: 26,
+                }}
+              >
+                작품을 보는 시선을
+                <br />
+                끊지 않는 인텔리전스.
+              </h3>
+              <p
+                style={{
+                  fontSize: 16,
                   lineHeight: 1.85,
-                  color: "#cfcfcf",
-                  marginBottom: 22,
+                  color: "#b8b8b8",
+                  marginBottom: 18,
                   fontWeight: 300,
                 }}
               >
-                작품을 응시하는 순간, AXVELA AI가 작품을 인식하고 해설합니다.
+                기존의 음성 가이드·QR 스캔·모바일 앱은 모두 관람의 흐름을
+                끊습니다. AXVELA AI Glass는 시야 안에서 작동합니다. 작품에서
+                눈을 떼지 않은 채, 음성으로 묻고 즉시 답을 받습니다.
               </p>
               <p
                 style={{
-                  fontSize: 18,
+                  fontSize: 16,
                   lineHeight: 1.85,
-                  color: "#cfcfcf",
-                  marginBottom: 22,
-                  fontWeight: 300,
-                }}
-              >
-                음성으로 묻고, 시야 안에서 답을 받습니다.
-              </p>
-              <p
-                style={{
-                  fontSize: 18,
-                  lineHeight: 1.85,
-                  color: "#cfcfcf",
+                  color: "#b8b8b8",
                   margin: 0,
                   fontWeight: 300,
                 }}
               >
-                관람의 모든 순간이 데이터가 되고, 데이터는 다시 더 정교한
-                Cultural Intelligence로 돌아옵니다.
+                작가·시대·재료·시장 가격·관람객 반응·유사 작품 비교가
+                시선이 닿는 곳에 자연스럽게 떠오릅니다. 보고 싶을 때 보이고,
+                집중할 때 사라집니다.
               </p>
             </div>
           </Fade>
         </div>
-      </div>
 
-      {/* ── Full-bleed POV ── */}
-      <Fade>
+        {/* ── Core Capabilities (3-feature grid with full copy) ── */}
         <div
           style={{
-            maxWidth: 1600,
-            margin: "clamp(56px, 8vw, 104px) auto 0",
-          }}
-        >
-          <div
-            className="group"
-            style={{
-              position: "relative",
-              aspectRatio: "16/9",
-              borderRadius: 24,
-              overflow: "hidden",
-              border: "1px solid rgba(255,255,255,0.06)",
-              boxShadow:
-                "0 40px 120px -30px rgba(196,169,110,0.18), 0 30px 100px -30px rgba(0,0,0,0.9)",
-            }}
-          >
-            <Image
-              src="/images/axvela_glass_pov.png"
-              alt="AXVELA AI overlay on artwork — Cultural Intelligence in AR view"
-              fill
-              sizes="100vw"
-              className="transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <p
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.22em",
-              textTransform: "uppercase" as const,
-              color: "#6a6a6a",
-              fontWeight: 500,
-              textAlign: "center",
-              marginTop: 22,
-            }}
-          >
-            Real World · Real Culture · Real Intelligence.
-          </p>
-        </div>
-      </Fade>
-
-      {/* ── 3-feature grid ── */}
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div
-          className="grid grid-cols-1 sm:grid-cols-3"
-          style={{
-            marginTop: "clamp(56px, 7vw, 96px)",
-            paddingTop: 40,
+            paddingTop: "clamp(48px, 6vw, 72px)",
             borderTop: "1px solid #1a1a1a",
-            gap: "clamp(28px, 4vw, 48px)",
           }}
         >
-          {AI_GLASS_FEATURES.map((item, i) => (
-            <Fade key={item.title} delay={i * 80}>
-              <div>
-                <p
-                  style={{
-                    fontSize: 15,
-                    fontWeight: 600,
-                    color: "#fff",
-                    letterSpacing: "-0.015em",
-                    marginBottom: 14,
-                  }}
-                >
-                  {item.title}
-                </p>
-                {item.lines.map((line) => (
+          <Fade>
+            <Label light>Core Capabilities</Label>
+            <h3
+              style={{
+                fontSize: "clamp(24px, 3vw, 36px)",
+                fontWeight: 500,
+                letterSpacing: "-0.024em",
+                lineHeight: 1.25,
+                marginTop: 18,
+                marginBottom: "clamp(40px, 5vw, 56px)",
+                color: "#fff",
+                maxWidth: 640,
+              }}
+            >
+              세 가지 핵심 기술로 작동합니다.
+            </h3>
+          </Fade>
+
+          <div
+            className="grid grid-cols-1 md:grid-cols-3"
+            style={{ gap: "clamp(32px, 4vw, 56px)" }}
+          >
+            {AI_GLASS_FEATURES.map((feature, i) => (
+              <Fade key={feature.title} delay={i * 80}>
+                <div>
                   <p
-                    key={line}
                     style={{
-                      fontSize: 14,
-                      color: "#8a8a8a",
-                      lineHeight: 1.75,
-                      margin: 0,
+                      fontFamily:
+                        "ui-monospace, SFMono-Regular, Menlo, monospace",
+                      fontSize: 11,
+                      letterSpacing: "0.20em",
+                      color: "#c4a96e",
+                      fontWeight: 500,
+                      marginBottom: 18,
                     }}
                   >
-                    {line}
+                    {feature.num}
                   </p>
-                ))}
-              </div>
-            </Fade>
-          ))}
+                  <h4
+                    style={{
+                      fontSize: 20,
+                      fontWeight: 600,
+                      color: "#fff",
+                      letterSpacing: "-0.018em",
+                      marginBottom: 6,
+                    }}
+                  >
+                    {feature.title}
+                  </h4>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      color: "#888",
+                      letterSpacing: "0.01em",
+                      marginBottom: 20,
+                    }}
+                  >
+                    {feature.subtitle}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 15,
+                      lineHeight: 1.8,
+                      color: "#b0b0b0",
+                      margin: 0,
+                      fontWeight: 300,
+                    }}
+                  >
+                    {feature.description}
+                  </p>
+                </div>
+              </Fade>
+            ))}
+          </div>
         </div>
       </div>
     </section>
