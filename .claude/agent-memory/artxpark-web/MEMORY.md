@@ -1,0 +1,7 @@
+- [Design tokens](design-tokens.md) — color, spacing, type scale, motion conventions used across all sections
+- [Project structure](project-structure.md) — repo layout and where sections live
+- [Content source-of-truth](content-source-of-truth.md) — where every factual claim and copy line must come from
+- [Founder decisions](founder-decisions.md) — naming (ArtX→AXVELA live rename approved 2026-05-21), bilingual EN-main/KO-sub pattern, product taxonomy
+- [Build & deploy](build-deploy.md) — verified commands and deployment guardrails
+- [Image quality policy](feedback-image-quality.md) — when to use unoptimized + quality 95 for mockup/diagram PNGs
+- [Fonts](fonts.md) — Inter + Pretendard via next/font, woff2 copied into app/fonts/

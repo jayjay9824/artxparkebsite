@@ -81,8 +81,10 @@ function Nav() {
   }, []);
 
   const links: [string, string][] = [
+    ["Thesis", "#thesis"],
     ["AXVELA AI", "#axvela"],
-    ["AI Glass", "#ai-glass"],
+    ["AXVELA VIEW", "#ai-glass"],
+    ["Passport", "#passport"],
     ["Ecosystem", "#ecosystem"],
     ["About", "#about"],
     ["Team", "#team"],
@@ -667,7 +669,7 @@ function Hero() {
           {/* Left: Text */}
           <div>
             <Fade>
-              <Label>ArtXpark · Cultural Intelligence</Label>
+              <Label>ArtXpark · Physical Asset Intelligence Infrastructure</Label>
             </Fade>
             <Fade delay={80}>
               <h1
@@ -677,24 +679,26 @@ function Hero() {
                   letterSpacing: "-0.035em",
                   lineHeight: 1.06,
                   marginTop: 18,
-                  marginBottom: 2,
+                  marginBottom: 12,
                   color: "var(--fg)",
                 }}
               >
-                AXVELA AI
+                AI generates.
+                <br />
+                AXVELA verifies.
               </h1>
               <p
                 style={{
-                  fontSize: "clamp(20px, 2.8vw, 32px)",
+                  fontSize: "clamp(18px, 2.4vw, 26px)",
                   fontWeight: 300,
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1.3,
-                  marginTop: 6,
+                  letterSpacing: "-0.018em",
+                  lineHeight: 1.35,
+                  marginTop: 10,
                   marginBottom: 28,
                   color: "var(--body)",
                 }}
               >
-                Cultural Intelligence Engine
+                AI가 만들고, AXVELA가 검증한다.
               </p>
             </Fade>
             <Fade delay={180}>
@@ -703,18 +707,31 @@ function Hero() {
                   fontSize: 17,
                   lineHeight: 1.78,
                   color: "var(--body)",
-                  maxWidth: 460,
-                  marginBottom: 44,
+                  maxWidth: 520,
+                  marginBottom: 14,
                 }}
               >
-                ArtXpark is building a next-generation AI system that understands,
-                explains, and learns from artworks through real-world human
-                interaction.
+                AXVELA is the data infrastructure for physical cultural assets —
+                connecting their state, movement, culture, and transactions into
+                a single, verifiable record.
+              </p>
+              <p
+                style={{
+                  fontSize: 15,
+                  lineHeight: 1.85,
+                  color: "var(--muted)",
+                  maxWidth: 520,
+                  marginBottom: 44,
+                  wordBreak: "keep-all",
+                }}
+              >
+                AXVELA는 실물 문화 자산의 상태·이동·문화·거래를 하나의 검증 가능한
+                기록으로 잇는 데이터 인프라입니다.
               </p>
             </Fade>
             <Fade delay={280}>
               <a
-                href="#axvela"
+                href="#thesis"
                 style={{
                   display: "inline-block",
                   padding: "13px 30px",
@@ -727,7 +744,7 @@ function Hero() {
                   letterSpacing: "0.01em",
                 }}
               >
-                Explore AXVELA AI
+                Explore the infrastructure ↓
               </a>
             </Fade>
           </div>
@@ -751,19 +768,19 @@ function Hero() {
           >
             {[
               {
-                label: "Core Product",
-                title: "AXVELA AI",
-                desc: "Understands and explains art through interaction",
+                label: "Macro Flow",
+                title: "Physical Asset → Data → AI → Assetization",
+                desc: "From the real world to a verifiable record.",
               },
               {
-                label: "Ecosystem",
-                title: "ArtXscan · ArtXdrone · ArtXbot",
-                desc: "Physical data infrastructure",
+                label: "Master Brand",
+                title: "AXVELA",
+                desc: "Physical Asset Intelligence Infrastructure",
               },
               {
                 label: "Company",
                 title: "ArtXpark Inc.",
-                desc: "Seoul, Korea",
+                desc: "Seoul, Republic of Korea",
               },
             ].map((item) => (
               <div key={item.title}>
@@ -784,6 +801,496 @@ function Hero() {
             ))}
           </div>
         </Fade>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════
+   1.5  THESIS
+════════════════════════════════════════ */
+const THESIS_STREAMS = [
+  {
+    num: "01",
+    label: "Operations Data",
+    product: "Gallery System",
+    items: "Exhibition history · Transactions · Collectors · Consignment · Invoices",
+  },
+  {
+    num: "02",
+    label: "Intelligence Data",
+    product: "AXVELA AI",
+    items: "Artist analysis · Movement · Market trends · Comparables",
+  },
+  {
+    num: "03",
+    label: "Capture Data",
+    product: "AXVELA SCAN",
+    items: "3D points · Condition · Material · Artist touch · Change history",
+  },
+  {
+    num: "04",
+    label: "Engagement Data",
+    product: "AXVELA VIEW",
+    items: "AR recognition · Works of interest · Viewing history",
+  },
+];
+
+function Thesis() {
+  return (
+    <section
+      id="thesis"
+      style={{
+        background: "var(--dark-bg)",
+        color: "var(--dark-fg)",
+        padding: "clamp(80px, 12vw, 140px) clamp(20px, 4vw, 32px)",
+        overflow: "hidden",
+      }}
+    >
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <Fade>
+          <Label light>The Thesis</Label>
+          <h2
+            style={{
+              fontSize: "clamp(30px, 4vw, 52px)",
+              fontWeight: 600,
+              letterSpacing: "-0.032em",
+              lineHeight: 1.1,
+              marginTop: 18,
+              marginBottom: 14,
+              color: "#fff",
+              maxWidth: 820,
+            }}
+          >
+            <span style={{ display: "block" }}>Six products. Three phases.</span>
+            <span style={{ display: "block" }}>One infrastructure.</span>
+          </h2>
+          <p
+            style={{
+              fontSize: "clamp(18px, 2vw, 22px)",
+              fontWeight: 300,
+              letterSpacing: "-0.012em",
+              lineHeight: 1.5,
+              color: "#b8b8b8",
+              maxWidth: 720,
+              marginBottom: 44,
+              wordBreak: "keep-all",
+            }}
+          >
+            여섯 제품, 세 단계, 하나의 인프라.
+          </p>
+        </Fade>
+
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{
+            gap: "clamp(28px, 4vw, 56px)",
+            marginBottom: "clamp(64px, 8vw, 96px)",
+          }}
+        >
+          <Fade delay={80}>
+            <p
+              style={{
+                fontSize: 16,
+                lineHeight: 1.85,
+                color: "#b8b8b8",
+                margin: 0,
+                fontWeight: 300,
+                maxWidth: 520,
+              }}
+            >
+              On the surface, AXVELA is a family of products released in three
+              phases. Underneath, it is a single asset-data infrastructure.
+              AXVELA does not build a smarter AI — it builds the layer that
+              connects the state, movement, culture, and transactions of
+              physical assets into one continuous record.
+            </p>
+          </Fade>
+          <Fade delay={160}>
+            <p
+              style={{
+                fontSize: 15,
+                lineHeight: 1.95,
+                color: "#7a7a7a",
+                margin: 0,
+                fontWeight: 300,
+                maxWidth: 520,
+                wordBreak: "keep-all",
+              }}
+            >
+              표면적으로 AXVELA는 세 단계로 출시되는 여섯 개의 제품입니다.
+              그러나 그 아래는 하나의 자산 데이터 인프라입니다. AXVELA는 더
+              똑똑한 AI를 만들지 않습니다 — 실물 자산의 상태·이동·문화·거래를
+              하나의 연속된 기록으로 잇는 레이어를 만듭니다.
+            </p>
+          </Fade>
+        </div>
+
+        {/* ── Product proof: Gallery System dashboard + AI / SCAN mockups ── */}
+        <div
+          style={{
+            paddingTop: "clamp(40px, 5vw, 64px)",
+            borderTop: "1px solid #1a1a1a",
+            marginBottom: "clamp(64px, 8vw, 96px)",
+          }}
+        >
+          <Fade>
+            <p
+              style={{
+                fontFamily:
+                  "ui-monospace, SFMono-Regular, Menlo, monospace",
+                fontSize: 11,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase" as const,
+                color: "#c4a96e",
+                fontWeight: 500,
+                marginBottom: 16,
+              }}
+            >
+              01 · Operations · Gallery System
+            </p>
+            <div
+              style={{
+                position: "relative",
+                aspectRatio: "1536 / 1024",
+                maxWidth: 1280,
+                margin: "0 auto",
+                borderRadius: 16,
+                overflow: "hidden",
+                border: "1px solid rgba(255,255,255,0.08)",
+                background: "#0f0f0f",
+                boxShadow:
+                  "0 40px 120px -30px rgba(0,0,0,0.9), 0 20px 60px -20px rgba(196,169,110,0.08)",
+              }}
+            >
+              <Image
+                src="/images/gallery-system.png"
+                alt="Gallery System 운영 대시보드 — 전시·거래·컬렉터·위탁·인보이스 통합 화면"
+                fill
+                sizes="(min-width: 1200px) 1200px, (min-width: 640px) 90vw, 100vw"
+                quality={95}
+                unoptimized
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </Fade>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2"
+            style={{
+              gap: "clamp(24px, 3.5vw, 40px)",
+              marginTop: "clamp(28px, 4vw, 48px)",
+            }}
+          >
+            <Fade delay={100}>
+              <div>
+                <p
+                  style={{
+                    fontFamily:
+                      "ui-monospace, SFMono-Regular, Menlo, monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase" as const,
+                    color: "#c4a96e",
+                    fontWeight: 500,
+                    marginBottom: 16,
+                  }}
+                >
+                  02 · Intelligence · AXVELA AI
+                </p>
+                <div
+                  style={{
+                    position: "relative",
+                    aspectRatio: "851 / 1847",
+                    maxWidth: 360,
+                    margin: "0 auto",
+                    borderRadius: 22,
+                    overflow: "hidden",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    background: "#0f0f0f",
+                    boxShadow:
+                      "0 30px 80px -30px rgba(0,0,0,0.9)",
+                  }}
+                >
+                  <Image
+                    src="/images/axvela-ai.png"
+                    alt="AXVELA AI — 작품 분석 모바일 앱 화면"
+                    fill
+                    sizes="(min-width: 640px) 400px, 90vw"
+                    quality={95}
+                    unoptimized
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+              </div>
+            </Fade>
+
+            <Fade delay={180}>
+              <div>
+                <p
+                  style={{
+                    fontFamily:
+                      "ui-monospace, SFMono-Regular, Menlo, monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase" as const,
+                    color: "#c4a96e",
+                    fontWeight: 500,
+                    marginBottom: 16,
+                  }}
+                >
+                  03 · Capture · AXVELA SCAN
+                </p>
+                <div
+                  style={{
+                    position: "relative",
+                    aspectRatio: "853 / 1844",
+                    maxWidth: 360,
+                    margin: "0 auto",
+                    borderRadius: 22,
+                    overflow: "hidden",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    background: "#0f0f0f",
+                    boxShadow:
+                      "0 30px 80px -30px rgba(0,0,0,0.9)",
+                  }}
+                >
+                  <Image
+                    src="/images/axvela-scan.png"
+                    alt="AXVELA SCAN — LiDAR 3D 스캔 모바일 앱 화면"
+                    fill
+                    sizes="(min-width: 640px) 400px, 90vw"
+                    quality={95}
+                    unoptimized
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+              </div>
+            </Fade>
+          </div>
+
+          {/* ── 04 · Process — SCAN + LiDAR 디지털 트윈 10단계 워크플로우 ── */}
+          <Fade delay={260}>
+            <div
+              style={{
+                marginTop: "clamp(40px, 5vw, 64px)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  justifyContent: "space-between",
+                  gap: 16,
+                  flexWrap: "wrap",
+                  marginBottom: 16,
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily:
+                      "ui-monospace, SFMono-Regular, Menlo, monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase" as const,
+                    color: "#c4a96e",
+                    fontWeight: 500,
+                    margin: 0,
+                  }}
+                >
+                  04 · Process · LiDAR Digital Twin Workflow
+                </p>
+                <p
+                  className="sm:hidden"
+                  style={{
+                    fontFamily:
+                      "ui-monospace, SFMono-Regular, Menlo, monospace",
+                    fontSize: 10,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase" as const,
+                    color: "#6a6a6a",
+                    fontWeight: 500,
+                    margin: 0,
+                  }}
+                >
+                  ← swipe to explore
+                </p>
+              </div>
+              <div
+                style={{
+                  borderRadius: 16,
+                  overflow: "hidden",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "#0f0f0f",
+                  boxShadow:
+                    "0 40px 120px -30px rgba(0,0,0,0.9), 0 20px 60px -20px rgba(196,169,110,0.08)",
+                }}
+              >
+                <div
+                  className="overflow-x-auto sm:overflow-x-hidden"
+                  style={{
+                    WebkitOverflowScrolling: "touch",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      minWidth: 760,
+                      aspectRatio: "1535 / 1024",
+                    }}
+                  >
+                    <Image
+                      src="/images/scan-flow-2.png"
+                      alt="AXVELA SCAN — iPhone 16 Pro LiDAR로 도자기 디지털 트윈을 만드는 10단계 워크플로우 (백자청화자전어문호)"
+                      fill
+                      sizes="(max-width: 640px) 760px, (max-width: 1200px) 100vw, 1200px"
+                      quality={95}
+                      unoptimized
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Fade>
+        </div>
+
+        <div
+          style={{
+            paddingTop: "clamp(40px, 5vw, 64px)",
+            borderTop: "1px solid #1a1a1a",
+          }}
+        >
+          <Fade>
+            <h3
+              style={{
+                fontSize: "clamp(20px, 2.4vw, 28px)",
+                fontWeight: 500,
+                letterSpacing: "-0.022em",
+                lineHeight: 1.3,
+                color: "#fff",
+                marginBottom: 8,
+              }}
+            >
+              Four data streams. One asset identity.
+            </h3>
+            <p
+              style={{
+                fontSize: 13,
+                color: "#888",
+                letterSpacing: "0.01em",
+                marginBottom: "clamp(36px, 5vw, 56px)",
+              }}
+            >
+              네 개의 데이터 스트림, 하나의 자산 정체성.
+            </p>
+          </Fade>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4"
+            style={{ gap: "clamp(20px, 2.5vw, 28px)" }}
+          >
+            {THESIS_STREAMS.map((s, i) => (
+              <Fade key={s.label} delay={i * 80}>
+                <div
+                  style={{
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    borderRadius: 14,
+                    padding: "28px 24px",
+                    height: "100%",
+                    background: "rgba(255,255,255,0.015)",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily:
+                        "ui-monospace, SFMono-Regular, Menlo, monospace",
+                      fontSize: 11,
+                      letterSpacing: "0.20em",
+                      color: "#c4a96e",
+                      fontWeight: 500,
+                      marginBottom: 18,
+                    }}
+                  >
+                    {s.num}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 600,
+                      color: "#fff",
+                      letterSpacing: "-0.018em",
+                      marginBottom: 6,
+                    }}
+                  >
+                    {s.label}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 12,
+                      color: "#888",
+                      letterSpacing: "0.04em",
+                      textTransform: "uppercase" as const,
+                      marginBottom: 16,
+                      fontWeight: 500,
+                    }}
+                  >
+                    {s.product}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      color: "#9a9a9a",
+                      lineHeight: 1.7,
+                      margin: 0,
+                      fontWeight: 300,
+                      wordBreak: "keep-all",
+                    }}
+                  >
+                    {s.items}
+                  </p>
+                </div>
+              </Fade>
+            ))}
+          </div>
+
+          <Fade delay={360}>
+            <div
+              style={{
+                marginTop: "clamp(40px, 5vw, 64px)",
+                paddingTop: "clamp(28px, 3.5vw, 40px)",
+                borderTop: "1px solid #1a1a1a",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "12px 32px",
+              }}
+            >
+              {[
+                ["Append-only", "누적된다"],
+                ["Cross-referenced", "서로 교차 검증된다"],
+                ["Temporal", "시간이 깊이를 만든다"],
+              ].map(([en, ko]) => (
+                <div key={en} style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+                  <span
+                    style={{
+                      fontSize: 11,
+                      letterSpacing: "0.20em",
+                      textTransform: "uppercase" as const,
+                      color: "#c4a96e",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {en}
+                  </span>
+                  <span style={{ fontSize: 13, color: "#7a7a7a", fontWeight: 300 }}>
+                    {ko}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Fade>
+        </div>
       </div>
     </section>
   );
@@ -832,13 +1339,26 @@ function AxvelaOverview() {
                   letterSpacing: "-0.028em",
                   lineHeight: 1.13,
                   marginTop: 16,
-                  marginBottom: 28,
+                  marginBottom: 10,
                   color: "var(--fg)",
                 }}
               >
                 Not a chatbot.
                 <br />A cultural intelligence system.
               </h2>
+              <p
+                style={{
+                  fontSize: "clamp(15px, 1.6vw, 18px)",
+                  fontWeight: 300,
+                  letterSpacing: "-0.012em",
+                  lineHeight: 1.5,
+                  color: "var(--muted)",
+                  marginBottom: 28,
+                  wordBreak: "keep-all",
+                }}
+              >
+                챗봇이 아니다. 문화 인텔리전스 시스템이다.
+              </p>
             </Fade>
             <Fade delay={140}>
               <p
@@ -906,7 +1426,7 @@ const WHY_FEATURES = [
   },
   {
     title: "Ecosystem-Connected",
-    desc: "Linked directly to real-world physical data through ArtXscan, ArtXdrone, and ArtXbot — grounding every AI output in verified field evidence.",
+    desc: "Linked directly to real-world physical data through AXVELA SCAN, AXVELA DRONE, and AXVELA ROBOT — grounding every AI output in verified field evidence.",
   },
 ];
 
@@ -1048,6 +1568,22 @@ function WhyAxvela() {
           </motion.h2>
 
           <motion.p
+            custom={0.12}
+            variants={fadeUp}
+            style={{
+              fontSize: "clamp(15px, 1.6vw, 18px)",
+              fontWeight: 300,
+              letterSpacing: "-0.012em",
+              lineHeight: 1.5,
+              color: "#8a8a8a",
+              marginTop: 12,
+              wordBreak: "keep-all",
+            }}
+          >
+            문화를 위해 설계된 인텔리전스.
+          </motion.p>
+
+          <motion.p
             custom={0.16}
             variants={fadeUp}
             style={{
@@ -1091,21 +1627,21 @@ const AI_GLASS_FEATURES = [
     title: "Real-time Recognition",
     subtitle: "실시간 인식",
     description:
-      "작품을 시야에 두는 즉시 AXVELA AI가 작품을 식별합니다. 별도의 검색이나 입력 없이, 음성으로 묻는 순간 작가·시대·재료·이력이 곧바로 응답됩니다. 갤러리 동선을 끊지 않고, 관람의 흐름 안에서 작품을 이해합니다.",
+      "The moment a work enters your view, AXVELA identifies it. No search, no input — ask by voice and the artist, period, material, and history respond at once, within the flow of the visit.",
   },
   {
     num: "02",
     title: "Contextual Overlay",
     subtitle: "컨텍스트 오버레이",
     description:
-      "시장 가격·관람객 반응·유사 작품 비교가 시야 안에 자연스럽게 떠오릅니다. 단순한 정보 표시가 아니라, 작품을 보는 시선을 가리지 않는 위치에 큐레이션됩니다. 보고 싶을 때만 보이고, 집중할 때는 사라집니다.",
+      "Market value, visitor response, and comparable works surface naturally in view — curated to sit where they never block the work. Visible on demand, gone when you focus.",
   },
   {
     num: "03",
     title: "Continuous Learning",
     subtitle: "지속 학습",
     description:
-      "모든 관람 데이터—머문 시간, 다시 본 작품, 비교한 작품—는 AXVELA AI를 더 정교하게 만듭니다. Cultural Intelligence는 사용자가 늘어날수록 깊어지고, 컬렉터와 갤러리에게 더 정확한 인사이트로 돌아옵니다.",
+      "Every viewing signal — time spent, works revisited, works compared — makes AXVELA more precise. The intelligence deepens as more people use it, returning sharper insight to collectors and galleries.",
   },
 ];
 
@@ -1123,7 +1659,7 @@ function AIGlass() {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         {/* ── Section Header ── */}
         <Fade>
-          <Label light>AXVELA AI Glass</Label>
+          <Label light>AXVELA VIEW</Label>
           <h2
             style={{
               fontSize: "clamp(30px, 4vw, 52px)",
@@ -1131,7 +1667,7 @@ function AIGlass() {
               letterSpacing: "-0.028em",
               lineHeight: 1.13,
               marginTop: 18,
-              marginBottom: 24,
+              marginBottom: 10,
               color: "#fff",
             }}
           >
@@ -1139,15 +1675,43 @@ function AIGlass() {
           </h2>
           <p
             style={{
+              fontSize: "clamp(15px, 1.6vw, 18px)",
+              fontWeight: 300,
+              letterSpacing: "-0.012em",
+              lineHeight: 1.5,
+              color: "#8a8a8a",
+              marginBottom: 28,
+            }}
+          >
+            보고, 묻고, 이해한다.
+          </p>
+          <p
+            style={{
               fontSize: 17,
               lineHeight: 1.8,
-              color: "#a8a8a8",
+              color: "#c8c8c8",
               maxWidth: 720,
-              marginBottom: "clamp(48px, 6vw, 72px)",
+              marginBottom: 14,
               fontWeight: 300,
             }}
           >
-            AXVELA AI Glass는 작품을 응시하는 순간 작품을 인식하고 해설하는
+            A wearable cultural intelligence that recognizes and interprets a
+            work the moment you look at it. In galleries and museums, every
+            detail appears within your field of view — no search, no device in
+            hand.
+          </p>
+          <p
+            style={{
+              fontSize: 15,
+              lineHeight: 1.85,
+              color: "#8a8a8a",
+              maxWidth: 720,
+              marginBottom: "clamp(48px, 6vw, 72px)",
+              fontWeight: 300,
+              wordBreak: "keep-all",
+            }}
+          >
+            AXVELA VIEW는 작품을 응시하는 순간 작품을 인식하고 해설하는
             웨어러블 Cultural Intelligence입니다. 갤러리·미술관·전시장에서
             별도의 검색이나 디바이스 조작 없이, 시야 안에서 모든 정보를
             받습니다.
@@ -1170,7 +1734,7 @@ function AIGlass() {
           >
             <Image
               src="/images/axvela_glass_pov.png"
-              alt="AXVELA AI overlay on artwork — Cultural Intelligence in AR view"
+              alt="AXVELA VIEW overlay on artwork — Cultural Intelligence in AR view"
               fill
               sizes="(max-width: 1200px) 100vw, 1200px"
               className="transition-transform duration-700 ease-out group-hover:scale-[1.02]"
@@ -1215,7 +1779,7 @@ function AIGlass() {
             >
               <Image
                 src="/images/axvela_glass_experience.png"
-                alt="A viewer wearing AXVELA AI Glass to read an artwork"
+                alt="A viewer wearing AXVELA VIEW to read an artwork"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="transition-transform duration-500 ease-out group-hover:scale-[1.02]"
@@ -1245,33 +1809,74 @@ function AIGlass() {
                   letterSpacing: "-0.022em",
                   lineHeight: 1.3,
                   color: "#fff",
-                  marginBottom: 26,
+                  marginBottom: 10,
                 }}
               >
-                작품을 보는 시선을
-                <br />
-                끊지 않는 인텔리전스.
+                <span style={{ display: "block" }}>Intelligence that</span>
+                <span style={{ display: "block" }}>never breaks your gaze.</span>
               </h3>
+              <p
+                style={{
+                  fontSize: "clamp(14px, 1.4vw, 16px)",
+                  fontWeight: 300,
+                  letterSpacing: "-0.012em",
+                  lineHeight: 1.5,
+                  color: "#8a8a8a",
+                  marginBottom: 26,
+                  wordBreak: "keep-all",
+                }}
+              >
+                작품을 보는 시선을 끊지 않는 인텔리전스.
+              </p>
               <p
                 style={{
                   fontSize: 16,
                   lineHeight: 1.85,
-                  color: "#b8b8b8",
-                  marginBottom: 18,
+                  color: "#c8c8c8",
+                  marginBottom: 8,
                   fontWeight: 300,
                 }}
               >
+                Audio guides, QR scans, and mobile apps all interrupt the act
+                of looking. AXVELA VIEW works within your line of sight — ask
+                by voice and get answers instantly, without ever taking your
+                eyes off the work.
+              </p>
+              <p
+                style={{
+                  fontSize: 14,
+                  lineHeight: 1.85,
+                  color: "#8a8a8a",
+                  marginBottom: 22,
+                  fontWeight: 300,
+                  wordBreak: "keep-all",
+                }}
+              >
                 기존의 음성 가이드·QR 스캔·모바일 앱은 모두 관람의 흐름을
-                끊습니다. AXVELA AI Glass는 시야 안에서 작동합니다. 작품에서
+                끊습니다. AXVELA VIEW는 시야 안에서 작동합니다. 작품에서
                 눈을 떼지 않은 채, 음성으로 묻고 즉시 답을 받습니다.
               </p>
               <p
                 style={{
                   fontSize: 16,
                   lineHeight: 1.85,
-                  color: "#b8b8b8",
+                  color: "#c8c8c8",
+                  marginBottom: 8,
+                  fontWeight: 300,
+                }}
+              >
+                Artist, period, material, market value, visitor response, and
+                comparable works surface right where your eyes rest. Visible
+                when you want them, gone when you focus.
+              </p>
+              <p
+                style={{
+                  fontSize: 14,
+                  lineHeight: 1.85,
+                  color: "#8a8a8a",
                   margin: 0,
                   fontWeight: 300,
+                  wordBreak: "keep-all",
                 }}
               >
                 작가·시대·재료·시장 가격·관람객 반응·유사 작품 비교가
@@ -1298,13 +1903,26 @@ function AIGlass() {
                 letterSpacing: "-0.024em",
                 lineHeight: 1.25,
                 marginTop: 18,
-                marginBottom: "clamp(40px, 5vw, 56px)",
+                marginBottom: 10,
                 color: "#fff",
                 maxWidth: 640,
               }}
             >
-              세 가지 핵심 기술로 작동합니다.
+              Built on three core capabilities.
             </h3>
+            <p
+              style={{
+                fontSize: "clamp(14px, 1.4vw, 16px)",
+                fontWeight: 300,
+                letterSpacing: "-0.012em",
+                lineHeight: 1.5,
+                color: "#8a8a8a",
+                marginBottom: "clamp(40px, 5vw, 56px)",
+                wordBreak: "keep-all",
+              }}
+            >
+              세 가지 핵심 기술로 작동합니다.
+            </p>
           </Fade>
 
           <div
@@ -1370,13 +1988,326 @@ function AIGlass() {
 }
 
 /* ════════════════════════════════════════
+   3.6  AXVELA PASSPORT
+════════════════════════════════════════ */
+const PASSPORT_PILLARS = [
+  {
+    num: "01",
+    title: "AXID · Unique ID",
+    sub: "평생 동일한 고유 일련번호",
+    body: "AXP-YYYY-XXXXXX · one ID for life",
+    confirm: true,
+  },
+  {
+    num: "02",
+    title: "Verified by AXVELA",
+    sub: "트러스트 스코어 + 9단계 타임라인",
+    body: "Trust Score + 9-stage timeline",
+  },
+  {
+    num: "03",
+    title: "Document Trust Layer",
+    sub: "변조 불가능한 영구 기록",
+    body: "Tamper-proof, permanently retained",
+    confirm: true,
+  },
+];
+
+function Passport() {
+  return (
+    <section
+      id="passport"
+      style={{
+        background: "#fff",
+        padding: "clamp(80px, 12vw, 140px) clamp(20px, 4vw, 32px)",
+      }}
+    >
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <Fade>
+          <Label>The Infrastructure</Label>
+          <h2
+            style={{
+              fontSize: "clamp(30px, 4vw, 52px)",
+              fontWeight: 600,
+              letterSpacing: "-0.032em",
+              lineHeight: 1.1,
+              marginTop: 18,
+              marginBottom: 14,
+              color: "var(--fg)",
+              maxWidth: 820,
+            }}
+          >
+            One Passport. Every asset.
+          </h2>
+          <p
+            style={{
+              fontSize: "clamp(18px, 2vw, 22px)",
+              fontWeight: 300,
+              letterSpacing: "-0.012em",
+              lineHeight: 1.5,
+              color: "var(--body)",
+              maxWidth: 720,
+              marginBottom: 44,
+              wordBreak: "keep-all",
+            }}
+          >
+            하나의 여권, 모든 자산.
+          </p>
+        </Fade>
+
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{
+            gap: "clamp(28px, 4vw, 56px)",
+            marginBottom: "clamp(56px, 7vw, 88px)",
+          }}
+        >
+          <Fade delay={80}>
+            <p
+              style={{
+                fontSize: 16,
+                lineHeight: 1.85,
+                color: "var(--body)",
+                margin: 0,
+                maxWidth: 520,
+              }}
+            >
+              Every work AXVELA touches receives an AXID — a permanent identifier
+              it keeps for life. Around it, the Passport assembles a verifiable,
+              time-stamped record: a trust score and a nine-stage timeline from
+              capture through verification, exhibition, transaction, shipping,
+              and collection.
+            </p>
+          </Fade>
+          <Fade delay={160}>
+            <p
+              style={{
+                fontSize: 15,
+                lineHeight: 1.95,
+                color: "var(--body)",
+                margin: 0,
+                maxWidth: 520,
+                wordBreak: "keep-all",
+              }}
+            >
+              AXVELA가 다루는 모든 작품은 평생 유지되는 고유 식별자 AXID를
+              받습니다. 그 위에 Passport가 검증 가능한 시계열 기록을 쌓습니다 —
+              트러스트 스코어, 그리고 캡처·검증·전시·거래·배송·소장에 이르는
+              9단계 타임라인.
+            </p>
+          </Fade>
+        </div>
+
+        {/* Passport visual — closed card, opened Overview, AI analysis panel */}
+        <Fade delay={120}>
+          <div
+            style={{
+              marginBottom: "clamp(56px, 7vw, 88px)",
+            }}
+          >
+            <p
+              className="sm:hidden"
+              style={{
+                fontFamily:
+                  "ui-monospace, SFMono-Regular, Menlo, monospace",
+                fontSize: 10,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase" as const,
+                color: "#6a6a6a",
+                fontWeight: 500,
+                margin: "0 0 10px",
+              }}
+            >
+              ← swipe to explore
+            </p>
+            <div
+              style={{
+                maxWidth: 1200,
+                margin: "0 auto",
+                borderRadius: 18,
+                overflow: "hidden",
+                border: "1px solid var(--border)",
+                background: "#fafafa",
+                boxShadow:
+                  "0 30px 80px -30px rgba(0,0,0,0.18), 0 12px 32px -12px rgba(0,0,0,0.08)",
+              }}
+            >
+              <div
+                className="overflow-x-auto sm:overflow-x-hidden"
+                style={{
+                  WebkitOverflowScrolling: "touch",
+                }}
+              >
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    minWidth: 760,
+                    aspectRatio: "1536 / 1024",
+                  }}
+                >
+                  <Image
+                    src="/images/passport.png"
+                    alt="AXVELA Passport — 닫힌 여권 카드, 펼친 Overview 화면, AI 분석 패널로 자산의 AXID와 9단계 타임라인을 보여주는 인터페이스"
+                    fill
+                    sizes="(max-width: 640px) 760px, (max-width: 1200px) 100vw, 1200px"
+                    quality={95}
+                    unoptimized
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Fade>
+
+        {/* Three pillars */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-3"
+          style={{ gap: "clamp(16px, 2vw, 20px)" }}
+        >
+          {PASSPORT_PILLARS.map((p, i) => (
+            <Fade key={p.title} delay={i * 80}>
+              <div
+                style={{
+                  position: "relative",
+                  border: "1px solid var(--border)",
+                  borderRadius: 14,
+                  padding: "36px 32px",
+                  height: "100%",
+                  background: "#fff",
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: 2,
+                    background: "#C4A96E",
+                  }}
+                />
+                <p
+                  style={{
+                    fontFamily:
+                      "ui-monospace, SFMono-Regular, Menlo, monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.20em",
+                    color: "#c4a96e",
+                    fontWeight: 500,
+                    marginBottom: 18,
+                    marginTop: 6,
+                  }}
+                >
+                  {p.num}
+                </p>
+                <p
+                  style={{
+                    fontSize: 17,
+                    fontWeight: 600,
+                    color: "var(--fg)",
+                    letterSpacing: "-0.018em",
+                    marginBottom: 6,
+                  }}
+                >
+                  {p.title}
+                </p>
+                <p
+                  style={{
+                    fontSize: 13,
+                    color: "var(--muted)",
+                    letterSpacing: "0.01em",
+                    marginBottom: 18,
+                    wordBreak: "keep-all",
+                  }}
+                >
+                  {p.sub}
+                </p>
+                <p
+                  style={{
+                    fontFamily: p.num === "01"
+                      ? "ui-monospace, SFMono-Regular, Menlo, monospace"
+                      : "inherit",
+                    fontSize: p.num === "01" ? 13 : 14,
+                    color: "var(--body)",
+                    lineHeight: 1.7,
+                    margin: 0,
+                  }}
+                >
+                  {p.body}
+                </p>
+                {p.confirm && (
+                  <p
+                    style={{
+                      fontSize: 10,
+                      letterSpacing: "0.15em",
+                      textTransform: "uppercase" as const,
+                      color: "#b8b8b8",
+                      marginTop: 20,
+                      paddingTop: 16,
+                      borderTop: "1px solid var(--border)",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Pending publication review
+                  </p>
+                )}
+              </div>
+            </Fade>
+          ))}
+        </div>
+
+        {/* Closing line */}
+        <Fade delay={300}>
+          <div
+            style={{
+              marginTop: "clamp(56px, 7vw, 88px)",
+              paddingTop: "clamp(36px, 5vw, 56px)",
+              borderTop: "1px solid var(--border)",
+              maxWidth: 820,
+            }}
+          >
+            <p
+              style={{
+                fontSize: "clamp(22px, 2.6vw, 30px)",
+                fontWeight: 500,
+                letterSpacing: "-0.022em",
+                lineHeight: 1.3,
+                color: "var(--fg)",
+                marginBottom: 12,
+              }}
+            >
+              This is the moat. Models can be rebuilt. Time cannot.
+            </p>
+            <p
+              style={{
+                fontSize: 15,
+                lineHeight: 1.85,
+                color: "var(--body)",
+                margin: 0,
+                wordBreak: "keep-all",
+              }}
+            >
+              이것이 해자입니다. 모델은 다시 만들 수 있지만, 시간은 다시 만들
+              수 없습니다.
+            </p>
+          </div>
+        </Fade>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════
    4. ECOSYSTEM
 ════════════════════════════════════════ */
 function Ecosystem() {
   const items = [
     {
       src: "/images/van_exterior.jpg",
-      name: "ArtXscan",
+      name: "AXVELA SCAN",
       tag: "Mobile Scanning System",
       desc: "High-precision mobile scanning deployed directly to the asset. Multi-spectral imaging and 3D capture in the field, on-site — wherever the work is.",
     },
@@ -1388,13 +2319,13 @@ function Ecosystem() {
     },
     {
       src: "/images/drone.jpg",
-      name: "ArtXdrone",
+      name: "AXVELA DRONE",
       tag: "Aerial Scanning",
       desc: "Autonomous aerial scanning for large-scale works, outdoor sculptures, murals, and architectural cultural assets — capturing every dimension.",
     },
     {
       src: "/images/bot.jpg",
-      name: "ArtXbot",
+      name: "AXVELA ROBOT",
       tag: "Precision Robotics",
       desc: "Robotic scanning unit designed for gallery and museum environments. Systematic, high-throughput, non-contact documentation at scale.",
     },
@@ -1411,12 +2342,25 @@ function Ecosystem() {
               fontWeight: 600,
               letterSpacing: "-0.028em",
               marginTop: 16,
-              marginBottom: 14,
+              marginBottom: 10,
               color: "var(--fg)",
             }}
           >
             Infrastructure that feeds AXVELA AI.
           </h2>
+          <p
+            style={{
+              fontSize: "clamp(15px, 1.6vw, 18px)",
+              fontWeight: 300,
+              letterSpacing: "-0.012em",
+              lineHeight: 1.5,
+              color: "var(--muted)",
+              marginBottom: 22,
+              wordBreak: "keep-all",
+            }}
+          >
+            AXVELA AI를 키우는 인프라.
+          </p>
           <p
             style={{
               fontSize: 16,
@@ -1426,8 +2370,8 @@ function Ecosystem() {
               lineHeight: 1.75,
             }}
           >
-            ArtXscan, ArtXdrone, and ArtXbot are not separate products. They are
-            the physical intelligence layer — generating the verified real-world
+            AXVELA SCAN, Mobile Scan Lab, AXVELA DRONE, and AXVELA ROBOT are not separate products.
+            They are the physical intelligence layer — generating the verified real-world
             data that AXVELA AI learns from and operates on.
           </p>
         </Fade>
@@ -1521,14 +2465,29 @@ function About() {
               fontWeight: 600,
               letterSpacing: "-0.03em",
               marginTop: 16,
-              marginBottom: 48,
+              marginBottom: 12,
               color: "#fff",
               maxWidth: 700,
               lineHeight: 1.13,
             }}
           >
-            An AI technology company building cultural intelligence infrastructure.
+            <span style={{ display: "block" }}>An AI technology company</span>
+            <span style={{ display: "block" }}>building cultural intelligence infrastructure.</span>
           </h2>
+          <p
+            style={{
+              fontSize: "clamp(15px, 1.6vw, 18px)",
+              fontWeight: 300,
+              letterSpacing: "-0.012em",
+              lineHeight: 1.5,
+              color: "#8a8a8a",
+              marginBottom: 48,
+              maxWidth: 700,
+              wordBreak: "keep-all",
+            }}
+          >
+            문화 인텔리전스 인프라를 만드는 AI 기술 기업.
+          </p>
         </Fade>
 
         <Fade delay={100}>
@@ -1699,12 +2658,25 @@ function Team() {
               fontWeight: 600,
               letterSpacing: "-0.028em",
               marginTop: 16,
-              marginBottom: 64,
+              marginBottom: 10,
               color: "var(--fg)",
             }}
           >
             Founder &amp; Team
           </h2>
+          <p
+            style={{
+              fontSize: "clamp(15px, 1.6vw, 18px)",
+              fontWeight: 300,
+              letterSpacing: "-0.012em",
+              lineHeight: 1.5,
+              color: "var(--muted)",
+              marginBottom: 64,
+              wordBreak: "keep-all",
+            }}
+          >
+            창업자 및 팀
+          </p>
         </Fade>
 
         {/* ── Leadership label ── */}
@@ -2014,8 +2986,10 @@ function Footer() {
           {/* Nav links */}
           <nav className="hidden sm:flex" style={{ gap: 28 }}>
             {[
+              ["Thesis", "#thesis"],
               ["AXVELA AI", "#axvela"],
-              ["AI Glass", "#ai-glass"],
+              ["AXVELA VIEW", "#ai-glass"],
+              ["Passport", "#passport"],
               ["Ecosystem", "#ecosystem"],
               ["About", "#about"],
               ["Team", "#team"],
@@ -2048,9 +3022,11 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Thesis />
         <AxvelaOverview />
         <WhyAxvela />
         <AIGlass />
+        <Passport />
         <Ecosystem />
         <About />
         <Team />
