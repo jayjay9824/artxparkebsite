@@ -243,14 +243,19 @@ function Nav() {
 const DEMO_MSG = "What is this artwork?";
 
 function HeroChatPanel() {
-  /* On mobile (and for prefers-reduced-motion users) the cycling caused
-     layout shift during scroll. We render the panel in its final, fullest
-     state on those viewports — no setInterval, no setState loop, no fade
-     transitions. The complete response is the most information-rich frame
-     and is therefore the ideal stand-in for a static mockup. Cycling is
-     enabled only on desktop-class viewports (>= 768px) without
-     prefers-reduced-motion. Both server and first client paint render the
-     static final state, so there is no hydration mismatch. */
+  /* Cycling runs on every viewport that hasn't opted out of motion. To
+     prevent layout shift on mobile (where the panel's tallest frame —
+     the full AI response — is significantly taller than the shorter
+     attachment/typing frames), the panel body is given a CSS-driven
+     min-height that's locked to the tallest natural height per
+     breakpoint: 960px on mobile, 700px on desktop (see globals.css
+     `.hero-chat-body`). The min-height is always applied (not gated on
+     `animate`), so reduced-motion users — who see the final/largest
+     frame statically — also get the same stable height.
+
+     SSR/first paint renders the panel in its final state so there is no
+     hydration mismatch and no flash of empty panel. On mount, if the
+     user has motion enabled, we reset to step ① and start cycling. */
   const [animate, setAnimate]               = useState(false);
   const [cycleKey, setCycleKey]             = useState(0);
   const [showAttachment, setShowAttachment] = useState(true);
@@ -260,12 +265,12 @@ function HeroChatPanel() {
   const [showResponse, setShowResponse]     = useState(true);
   const [fadeOut, setFadeOut]               = useState(false);
 
-  /* Decide once on mount whether the cycling animation should run. */
+  /* Decide once on mount whether the cycling animation should run.
+     Reduced-motion users keep the static final state rendered at SSR. */
   useEffect(() => {
     if (typeof window === "undefined") return;
     const motionOk = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const desktop  = window.matchMedia("(min-width: 768px)").matches;
-    if (motionOk && desktop) setAnimate(true);
+    if (motionOk) setAnimate(true);
   }, []);
 
   useEffect(() => {
@@ -388,16 +393,20 @@ function HeroChatPanel() {
       </div>
 
       {/* ── Chat messages ── */}
-      {/* On desktop (where cycling runs) we lock minHeight to the tallest
-          frame so content fading in/out does not shift the column. On mobile
-          and reduced-motion the panel is static at its fullest state, so the
-          natural height is already stable and no minHeight is needed. */}
+      {/* The panel body is locked to the tallest frame per breakpoint so
+          short cycle states (attachment-only, typing) don't shift layout
+          when they transition into the full response. Heights are set in
+          globals.css via `.hero-chat-body` and a media query — applied
+          unconditionally so reduced-motion users also get a stable box.
+          Messages stack from the top (flex-start) so empty space sits
+          below, mirroring real chat UI. */}
       <div
+        className="hero-chat-body"
         style={{
           padding: "20px 20px 16px",
-          minHeight: animate ? 700 : undefined,
           display: "flex",
           flexDirection: "column",
+          justifyContent: "flex-start",
           gap: 14,
           opacity: fadeOut ? 0 : 1,
           transition: "opacity 0.5s ease",

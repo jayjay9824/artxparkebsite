@@ -76,6 +76,21 @@ img {
   }
 }
 
+/* ── Hero chat panel body ──
+   Locks the panel to its tallest natural frame so cycling between
+   short states (attachment-only, typing) and the full response does
+   not shift the column. Mobile's full-response frame is materially
+   taller than desktop's because metadata + interpretation wrap onto
+   more lines at 380px, so mobile needs more height. */
+.hero-chat-body {
+  min-height: 960px;
+}
+@media (min-width: 768px) {
+  .hero-chat-body {
+    min-height: 700px;
+  }
+}
+
 /* ── Typing indicator dots ── */
 .typing-dot {
   width: 6px;
