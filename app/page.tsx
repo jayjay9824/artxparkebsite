@@ -369,10 +369,13 @@ function HeroChatPanel() {
       </div>
 
       {/* ── Chat messages ── */}
+      {/* minHeight is sized for the largest cycle state (full AI response:
+          attachment + user msg + 5 metadata rows + interpretation paragraph +
+          italic disclaimer). Locked-in to prevent CLS as content fades in/out. */}
       <div
         style={{
           padding: "20px 20px 16px",
-          minHeight: 360,
+          minHeight: "clamp(640px, 88vw, 700px)",
           display: "flex",
           flexDirection: "column",
           gap: 14,
@@ -1076,46 +1079,20 @@ function Thesis() {
                 marginTop: "clamp(40px, 5vw, 64px)",
               }}
             >
-              <div
+              <p
                 style={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  justifyContent: "space-between",
-                  gap: 16,
-                  flexWrap: "wrap",
-                  marginBottom: 16,
+                  fontFamily:
+                    "ui-monospace, SFMono-Regular, Menlo, monospace",
+                  fontSize: 11,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase" as const,
+                  color: "#c4a96e",
+                  fontWeight: 500,
+                  margin: "0 0 16px",
                 }}
               >
-                <p
-                  style={{
-                    fontFamily:
-                      "ui-monospace, SFMono-Regular, Menlo, monospace",
-                    fontSize: 11,
-                    letterSpacing: "0.22em",
-                    textTransform: "uppercase" as const,
-                    color: "#c4a96e",
-                    fontWeight: 500,
-                    margin: 0,
-                  }}
-                >
-                  04 · Process · LiDAR Digital Twin Workflow
-                </p>
-                <p
-                  className="sm:hidden"
-                  style={{
-                    fontFamily:
-                      "ui-monospace, SFMono-Regular, Menlo, monospace",
-                    fontSize: 10,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase" as const,
-                    color: "#6a6a6a",
-                    fontWeight: 500,
-                    margin: 0,
-                  }}
-                >
-                  ← swipe to explore
-                </p>
-              </div>
+                04 · Process · LiDAR Digital Twin Workflow
+              </p>
               <div
                 style={{
                   borderRadius: 16,
@@ -1127,29 +1104,21 @@ function Thesis() {
                 }}
               >
                 <div
-                  className="overflow-x-auto sm:overflow-x-hidden"
                   style={{
-                    WebkitOverflowScrolling: "touch",
+                    position: "relative",
+                    width: "100%",
+                    aspectRatio: "1535 / 1024",
                   }}
                 >
-                  <div
-                    style={{
-                      position: "relative",
-                      width: "100%",
-                      minWidth: 760,
-                      aspectRatio: "1535 / 1024",
-                    }}
-                  >
-                    <Image
-                      src="/images/scan-flow-2.png"
-                      alt="AXVELA SCAN — iPhone 16 Pro LiDAR로 도자기 디지털 트윈을 만드는 10단계 워크플로우 (백자청화자전어문호)"
-                      fill
-                      sizes="(max-width: 640px) 760px, (max-width: 1200px) 100vw, 1200px"
-                      quality={95}
-                      unoptimized
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
+                  <Image
+                    src="/images/scan-flow-2.png"
+                    alt="AXVELA SCAN — iPhone 16 Pro LiDAR로 도자기 디지털 트윈을 만드는 10단계 워크플로우 (백자청화자전어문호)"
+                    fill
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    quality={95}
+                    unoptimized
+                    style={{ objectFit: "contain" }}
+                  />
                 </div>
               </div>
             </div>
@@ -2105,21 +2074,6 @@ function Passport() {
               marginBottom: "clamp(56px, 7vw, 88px)",
             }}
           >
-            <p
-              className="sm:hidden"
-              style={{
-                fontFamily:
-                  "ui-monospace, SFMono-Regular, Menlo, monospace",
-                fontSize: 10,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase" as const,
-                color: "#6a6a6a",
-                fontWeight: 500,
-                margin: "0 0 10px",
-              }}
-            >
-              ← swipe to explore
-            </p>
             <div
               style={{
                 maxWidth: 1200,
@@ -2133,29 +2087,21 @@ function Passport() {
               }}
             >
               <div
-                className="overflow-x-auto sm:overflow-x-hidden"
                 style={{
-                  WebkitOverflowScrolling: "touch",
+                  position: "relative",
+                  width: "100%",
+                  aspectRatio: "1536 / 1024",
                 }}
               >
-                <div
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    minWidth: 760,
-                    aspectRatio: "1536 / 1024",
-                  }}
-                >
-                  <Image
-                    src="/images/passport.png"
-                    alt="AXVELA Passport — 닫힌 여권 카드, 펼친 Overview 화면, AI 분석 패널로 자산의 AXID와 9단계 타임라인을 보여주는 인터페이스"
-                    fill
-                    sizes="(max-width: 640px) 760px, (max-width: 1200px) 100vw, 1200px"
-                    quality={95}
-                    unoptimized
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
+                <Image
+                  src="/images/passport.png"
+                  alt="AXVELA Passport — 닫힌 여권 카드, 펼친 Overview 화면, AI 분석 패널로 자산의 AXID와 9단계 타임라인을 보여주는 인터페이스"
+                  fill
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  quality={95}
+                  unoptimized
+                  style={{ objectFit: "contain" }}
+                />
               </div>
             </div>
           </div>
