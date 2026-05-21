@@ -243,15 +243,34 @@ function Nav() {
 const DEMO_MSG = "What is this artwork?";
 
 function HeroChatPanel() {
+  /* On mobile (and for prefers-reduced-motion users) the cycling caused
+     layout shift during scroll. We render the panel in its final, fullest
+     state on those viewports — no setInterval, no setState loop, no fade
+     transitions. The complete response is the most information-rich frame
+     and is therefore the ideal stand-in for a static mockup. Cycling is
+     enabled only on desktop-class viewports (>= 768px) without
+     prefers-reduced-motion. Both server and first client paint render the
+     static final state, so there is no hydration mismatch. */
+  const [animate, setAnimate]               = useState(false);
   const [cycleKey, setCycleKey]             = useState(0);
-  const [showAttachment, setShowAttachment] = useState(false);
+  const [showAttachment, setShowAttachment] = useState(true);
   const [typedText, setTypedText]           = useState("");
-  const [showUserMsg, setShowUserMsg]       = useState(false);
+  const [showUserMsg, setShowUserMsg]       = useState(true);
   const [showThinking, setShowThinking]     = useState(false);
-  const [showResponse, setShowResponse]     = useState(false);
+  const [showResponse, setShowResponse]     = useState(true);
   const [fadeOut, setFadeOut]               = useState(false);
 
+  /* Decide once on mount whether the cycling animation should run. */
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    const motionOk = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const desktop  = window.matchMedia("(min-width: 768px)").matches;
+    if (motionOk && desktop) setAnimate(true);
+  }, []);
+
+  useEffect(() => {
+    if (!animate) return;
+
     setShowAttachment(false);
     setTypedText("");
     setShowUserMsg(false);
@@ -308,7 +327,7 @@ function HeroChatPanel() {
       if (ticker) clearInterval(ticker);
       ids.forEach(clearTimeout);
     };
-  }, [cycleKey]);
+  }, [cycleKey, animate]);
 
   return (
     <div
@@ -369,13 +388,14 @@ function HeroChatPanel() {
       </div>
 
       {/* ── Chat messages ── */}
-      {/* minHeight is sized for the largest cycle state (full AI response:
-          attachment + user msg + 5 metadata rows + interpretation paragraph +
-          italic disclaimer). Locked-in to prevent CLS as content fades in/out. */}
+      {/* On desktop (where cycling runs) we lock minHeight to the tallest
+          frame so content fading in/out does not shift the column. On mobile
+          and reduced-motion the panel is static at its fullest state, so the
+          natural height is already stable and no minHeight is needed. */}
       <div
         style={{
           padding: "20px 20px 16px",
-          minHeight: "clamp(640px, 88vw, 700px)",
+          minHeight: animate ? 700 : undefined,
           display: "flex",
           flexDirection: "column",
           gap: 14,
