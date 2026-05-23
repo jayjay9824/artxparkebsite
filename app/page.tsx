@@ -726,11 +726,25 @@ function Hero() {
                   letterSpacing: "-0.018em",
                   lineHeight: 1.35,
                   marginTop: 10,
-                  marginBottom: 28,
+                  marginBottom: 10,
                   color: "var(--body)",
                 }}
               >
                 AI가 만들고, AXVELA가 검증한다.
+              </p>
+              <p
+                style={{
+                  fontSize: 13,
+                  lineHeight: 1.5,
+                  color: "var(--muted)",
+                  marginBottom: 28,
+                  wordBreak: "keep-all",
+                  fontFeatureSettings: '"liga" off',
+                }}
+              >
+                <span>엑스벨라</span>
+                <span style={{ margin: "0 0.5em", opacity: 0.6 }}>·</span>
+                <span style={{ fontVariantLigatures: "none" }}>/æks&nbsp;ˈvel.ə/</span>
               </p>
             </Fade>
             <Fade delay={180}>
