@@ -717,7 +717,29 @@ function Hero() {
               >
                 AI generates.
                 <br />
-                AXVELA verifies.
+                <span style={{ whiteSpace: "nowrap" }}>
+                  AXVELA
+                  <span
+                    style={{
+                      display: "inline-block",
+                      marginLeft: "0.45em",
+                      verticalAlign: "0.32em",
+                      fontSize: "0.22em",
+                      fontWeight: 400,
+                      letterSpacing: "normal",
+                      lineHeight: 1.2,
+                      color: "var(--muted)",
+                      fontFeatureSettings: '"liga" off',
+                      fontVariantLigatures: "none",
+                      wordBreak: "keep-all",
+                    }}
+                  >
+                    엑스벨라
+                    <span style={{ margin: "0 0.4em", opacity: 0.55 }}>·</span>
+                    <span style={{ fontVariantLigatures: "none" }}>/æks&nbsp;ˈvel.ə/</span>
+                  </span>
+                </span>
+                {" "}verifies.
               </h1>
               <p
                 style={{
@@ -726,25 +748,11 @@ function Hero() {
                   letterSpacing: "-0.018em",
                   lineHeight: 1.35,
                   marginTop: 10,
-                  marginBottom: 10,
+                  marginBottom: 28,
                   color: "var(--body)",
                 }}
               >
                 AI가 만들고, AXVELA가 검증한다.
-              </p>
-              <p
-                style={{
-                  fontSize: 13,
-                  lineHeight: 1.5,
-                  color: "var(--muted)",
-                  marginBottom: 28,
-                  wordBreak: "keep-all",
-                  fontFeatureSettings: '"liga" off',
-                }}
-              >
-                <span>엑스벨라</span>
-                <span style={{ margin: "0 0.5em", opacity: 0.6 }}>·</span>
-                <span style={{ fontVariantLigatures: "none" }}>/æks&nbsp;ˈvel.ə/</span>
               </p>
             </Fade>
             <Fade delay={180}>
@@ -2002,6 +2010,33 @@ function AIGlass() {
 /* ════════════════════════════════════════
    3.6  AXVELA PASSPORT
 ════════════════════════════════════════ */
+const AXVELA_ID_FLOW = [
+  {
+    num: "01",
+    title: "SCAN",
+    sub: "Capture the truth",
+    body: "LiDAR와 미세 표면 분석으로 붓터치·재질·균열을 읽어 작품의 물리적 지문과 광학 실재성(PUF)을 생성합니다.",
+  },
+  {
+    num: "02",
+    title: "ID",
+    sub: "Create the immutable identity",
+    body: "지문과 PUF가 암호학적으로 결합해 단 하나의 AXVELA ID가 됩니다. 영구 불변·append-only 기록으로 위작 재세탁을 차단합니다.",
+  },
+  {
+    num: "03",
+    title: "AI",
+    sub: "Intelligence & trust engine",
+    body: "ID를 중심으로 진위·provenance·상태 변화·리스크를 분석하는 기관용 신뢰 엔진. 사진이 아니라 시간 속 실물 객체를 이해합니다.",
+  },
+  {
+    num: "04",
+    title: "Gallery System",
+    sub: "Operate. Manage. Trust.",
+    body: "갤러리·미술관·경매·보험이 모두 하나의 ID를 기준으로 등록·소유권 이전·전시·증명서 발급을 연결합니다.",
+  },
+];
+
 const PASSPORT_PILLARS = [
   {
     num: "01",
@@ -2024,6 +2059,249 @@ const PASSPORT_PILLARS = [
     confirm: true,
   },
 ];
+
+function AxvelaID() {
+  return (
+    <section
+      id="id"
+      style={{
+        background: "var(--surface)",
+        padding: "clamp(80px, 12vw, 140px) clamp(20px, 4vw, 32px)",
+      }}
+    >
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <Fade>
+          <Label>The Root Identity</Label>
+          <h2
+            style={{
+              fontSize: "clamp(30px, 4vw, 52px)",
+              fontWeight: 600,
+              letterSpacing: "-0.032em",
+              lineHeight: 1.1,
+              marginTop: 18,
+              marginBottom: 14,
+              color: "var(--fg)",
+              maxWidth: 880,
+            }}
+          >
+            The immutable identity of real-world assets.
+          </h2>
+          <p
+            style={{
+              fontSize: "clamp(18px, 2vw, 22px)",
+              fontWeight: 300,
+              letterSpacing: "-0.012em",
+              lineHeight: 1.5,
+              color: "var(--body)",
+              maxWidth: 720,
+              marginBottom: "clamp(48px, 6vw, 72px)",
+              wordBreak: "keep-all",
+            }}
+          >
+            실물 자산의 영구적 신원.
+          </p>
+        </Fade>
+
+        {/* AXVELA ID infographic — SCAN → ID → AI → Gallery System + Ledger */}
+        <Fade delay={120}>
+          <div
+            style={{
+              marginBottom: "clamp(48px, 6vw, 72px)",
+            }}
+          >
+            <div
+              style={{
+                maxWidth: 1200,
+                margin: "0 auto",
+                borderRadius: 18,
+                overflow: "hidden",
+                border: "1px solid var(--border)",
+                background: "#fafafa",
+                boxShadow:
+                  "0 30px 80px -30px rgba(0,0,0,0.18), 0 12px 32px -12px rgba(0,0,0,0.08)",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  aspectRatio: "1536 / 1024",
+                }}
+              >
+                <Image
+                  src="/images/axvela-id.png"
+                  alt="AXVELA ID 인포그래픽 — SCAN, AI, Gallery System, Ledger가 연결된 실물 자산의 영구 식별 시스템과 적용 산업"
+                  fill
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  quality={95}
+                  unoptimized
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+            </div>
+          </div>
+        </Fade>
+
+        {/* Lead — EN main / KO sub (Passport lead pattern) */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{
+            gap: "clamp(28px, 4vw, 56px)",
+            marginBottom: "clamp(56px, 7vw, 88px)",
+          }}
+        >
+          <Fade delay={160}>
+            <p
+              style={{
+                fontSize: 16,
+                lineHeight: 1.85,
+                color: "var(--body)",
+                margin: 0,
+                maxWidth: 520,
+              }}
+            >
+              AXVELA ID is the root identity a physical asset generates for
+              itself — not a QR code or a paper certificate, but an identifier
+              born from the object&rsquo;s own physical and optical signature.
+            </p>
+          </Fade>
+          <Fade delay={220}>
+            <p
+              style={{
+                fontSize: 15,
+                lineHeight: 1.95,
+                color: "var(--body)",
+                margin: 0,
+                maxWidth: 520,
+                wordBreak: "keep-all",
+              }}
+            >
+              AXVELA ID는 작품이 스스로 생성하는 근원 정체성입니다. QR 코드나
+              종이 증명서가 아니라, 객체 고유의 물리적·광학적 시그니처에서
+              태어나는 식별자입니다.
+            </p>
+          </Fade>
+        </div>
+
+        {/* Four-step flow cards — SCAN → ID → AI → Gallery System */}
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4"
+          style={{ gap: "clamp(16px, 2vw, 20px)" }}
+        >
+          {AXVELA_ID_FLOW.map((step, i) => (
+            <Fade key={step.title} delay={i * 80}>
+              <div
+                style={{
+                  position: "relative",
+                  border: "1px solid var(--border)",
+                  borderRadius: 14,
+                  padding: "36px 28px",
+                  height: "100%",
+                  background: "#fff",
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: 2,
+                    background: "#C4A96E",
+                  }}
+                />
+                <p
+                  style={{
+                    fontFamily:
+                      "ui-monospace, SFMono-Regular, Menlo, monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.20em",
+                    color: "#c4a96e",
+                    fontWeight: 500,
+                    marginBottom: 18,
+                    marginTop: 6,
+                  }}
+                >
+                  {step.num}
+                </p>
+                <p
+                  style={{
+                    fontSize: 17,
+                    fontWeight: 600,
+                    color: "var(--fg)",
+                    letterSpacing: "-0.018em",
+                    marginBottom: 6,
+                  }}
+                >
+                  {step.title}
+                </p>
+                <p
+                  style={{
+                    fontSize: 13,
+                    color: "var(--muted)",
+                    letterSpacing: "0.01em",
+                    marginBottom: 18,
+                    wordBreak: "keep-all",
+                  }}
+                >
+                  {step.sub}
+                </p>
+                <p
+                  style={{
+                    fontSize: 14,
+                    color: "var(--body)",
+                    lineHeight: 1.7,
+                    margin: 0,
+                    wordBreak: "keep-all",
+                  }}
+                >
+                  {step.body}
+                </p>
+              </div>
+            </Fade>
+          ))}
+        </div>
+
+        {/* Closing line — transitions naturally into Passport */}
+        <Fade delay={360}>
+          <div
+            style={{
+              marginTop: "clamp(56px, 7vw, 88px)",
+              paddingTop: "clamp(36px, 5vw, 56px)",
+              borderTop: "1px solid var(--border)",
+              maxWidth: 820,
+            }}
+          >
+            <p
+              style={{
+                fontSize: "clamp(22px, 2.6vw, 30px)",
+                fontWeight: 500,
+                letterSpacing: "-0.022em",
+                lineHeight: 1.3,
+                color: "var(--fg)",
+                marginBottom: 12,
+              }}
+            >
+              From object to identity. From possession to proof.
+            </p>
+            <p
+              style={{
+                fontSize: 15,
+                lineHeight: 1.85,
+                color: "var(--body)",
+                margin: 0,
+                wordBreak: "keep-all",
+              }}
+            >
+              객체에서 정체성으로. 소유에서 증명으로.
+            </p>
+          </div>
+        </Fade>
+      </div>
+    </section>
+  );
+}
 
 function Passport() {
   return (
@@ -3015,6 +3293,7 @@ export default function Home() {
         <AxvelaOverview />
         <WhyAxvela />
         <AIGlass />
+        <AxvelaID />
         <Passport />
         <Ecosystem />
         <About />
