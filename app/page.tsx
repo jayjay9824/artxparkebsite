@@ -2568,6 +2568,691 @@ function Passport() {
 }
 
 /* ════════════════════════════════════════
+   3.9  PATENT PORTFOLIO — Reality State Preservation
+════════════════════════════════════════ */
+const RSP_FLOW = [
+  { num: "01", title: "Observe",    sub: "다중 센서 관측" },
+  { num: "02", title: "Infer",      sub: "상태 추론" },
+  { num: "03", title: "Preserve",   sub: "불확실성 보존" },
+  { num: "04", title: "Lineage",    sub: "증거 귀속" },
+  { num: "05", title: "Reconstruct", sub: "의도 기반 재구성" },
+];
+
+const RSP_PILLARS = [
+  {
+    num: "01",
+    title: "Uncertainty Preservation",
+    sub: "불확실성 보존",
+    body: "불확실성을 폐기하지 않고 저장, Explicit Unknown 유지.",
+  },
+  {
+    num: "02",
+    title: "Evidence-grounded Reconstruction",
+    sub: "근거 기반 재구성",
+    body: "hallucination 방지, 증거 기반으로만 재구성.",
+  },
+  {
+    num: "03",
+    title: "Explicit Unknown",
+    sub: "명시적 미지 표현",
+    body: "미관측 영역은 “모른다”를 구조적으로 표현.",
+  },
+  {
+    num: "04",
+    title: "Selective Re-inference",
+    sub: "선택적 재추론",
+    body: "lineage 기반 부분 갱신 가능.",
+  },
+];
+
+const RSP_PATENTS = [
+  {
+    no: "ZDP253037",
+    title: "디지털 트윈 환경의 미술품 상태 모니터링 시스템 및 방법",
+    linked: "AXVELA SCAN",
+  },
+  {
+    no: "ZDP253038",
+    title: "AI 기반 미술품 진품 판별 단계적 분석 방법·장치",
+    linked: "AXVELA AI",
+  },
+  {
+    no: "ZDP253039",
+    title: "블록체인 기반 미술품 안전거래 플랫폼 방법·시스템",
+    linked: "AXVELA Gallery",
+  },
+  {
+    no: "ZDP253040",
+    title: "사용자 경험 기반 아트페어 가이드 제공 방법·장치",
+    linked: "AXVELA Viewer",
+  },
+];
+
+function PatentPortfolio() {
+  return (
+    <section
+      id="patents"
+      style={{
+        background: "var(--dark-bg)",
+        color: "var(--dark-fg)",
+        padding: "clamp(80px, 12vw, 140px) clamp(20px, 4vw, 32px)",
+        overflow: "hidden",
+      }}
+    >
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        {/* ── Block 0 · Section header ── */}
+        <Fade>
+          <Label light>Patent Portfolio</Label>
+          <h2
+            style={{
+              fontSize: "clamp(30px, 4vw, 52px)",
+              fontWeight: 600,
+              letterSpacing: "-0.032em",
+              lineHeight: 1.1,
+              marginTop: 18,
+              marginBottom: 14,
+              color: "#fff",
+              maxWidth: 820,
+            }}
+          >
+            Reality State Preservation
+          </h2>
+          <p
+            style={{
+              fontSize: "clamp(18px, 2vw, 22px)",
+              fontWeight: 300,
+              letterSpacing: "-0.012em",
+              lineHeight: 1.5,
+              color: "#b8b8b8",
+              maxWidth: 720,
+              marginBottom: 44,
+              wordBreak: "keep-all",
+            }}
+          >
+            현실 상태 보존 인프라.
+          </p>
+        </Fade>
+
+        <div
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{
+            gap: "clamp(28px, 4vw, 56px)",
+            marginBottom: "clamp(64px, 8vw, 96px)",
+          }}
+        >
+          <Fade delay={80}>
+            <p
+              style={{
+                fontSize: 17,
+                lineHeight: 1.8,
+                color: "#c8c8c8",
+                margin: 0,
+                fontWeight: 300,
+                maxWidth: 520,
+              }}
+            >
+              We don&rsquo;t store files. We preserve reconstructable reality
+              states.
+            </p>
+          </Fade>
+          <Fade delay={160}>
+            <p
+              style={{
+                fontSize: 15,
+                lineHeight: 1.95,
+                color: "#8a8a8a",
+                margin: 0,
+                fontWeight: 300,
+                maxWidth: 520,
+                wordBreak: "keep-all",
+              }}
+            >
+              우리는 파일이 아니라, 재구성 가능한 현실 상태를 보존합니다.
+            </p>
+          </Fade>
+        </div>
+
+        {/* ── Block 1 · 5-step Reality State Preservation flow ── */}
+        <Fade delay={120}>
+          <div
+            style={{
+              borderRadius: 16,
+              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(255,255,255,0.015)",
+              padding: "clamp(28px, 4vw, 44px) clamp(20px, 3vw, 36px)",
+              marginBottom: "clamp(40px, 5vw, 56px)",
+            }}
+          >
+            <div
+              className="flex flex-col md:flex-row md:items-center"
+              style={{
+                gap: "clamp(20px, 2vw, 28px)",
+              }}
+            >
+              {/* Left label — REALITY */}
+              <div
+                style={{
+                  flexShrink: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily:
+                      "ui-monospace, SFMono-Regular, Menlo, monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase" as const,
+                    color: "#c4a96e",
+                    fontWeight: 500,
+                  }}
+                >
+                  Reality
+                </span>
+              </div>
+
+              {/* 5 nodes */}
+              <div
+                className="flex flex-col md:flex-row md:items-stretch"
+                style={{
+                  flex: 1,
+                  gap: "clamp(14px, 1.6vw, 20px)",
+                  position: "relative",
+                }}
+              >
+                {RSP_FLOW.map((n, i) => (
+                  <div
+                    key={n.num}
+                    className="flex flex-row md:flex-col md:items-start items-center"
+                    style={{
+                      flex: 1,
+                      minWidth: 0,
+                      gap: 12,
+                      position: "relative",
+                    }}
+                  >
+                    {/* node */}
+                    <div
+                      style={{
+                        flex: 1,
+                        border: "1px solid rgba(196,169,110,0.30)",
+                        borderRadius: 10,
+                        padding: "14px 14px",
+                        background: "rgba(196,169,110,0.04)",
+                        minWidth: 0,
+                        width: "100%",
+                      }}
+                    >
+                      <p
+                        style={{
+                          fontFamily:
+                            "ui-monospace, SFMono-Regular, Menlo, monospace",
+                          fontSize: 11,
+                          letterSpacing: "0.22em",
+                          color: "#c4a96e",
+                          fontWeight: 500,
+                          marginBottom: 6,
+                        }}
+                      >
+                        {n.num}
+                      </p>
+                      <p
+                        style={{
+                          fontSize: 14,
+                          fontWeight: 600,
+                          color: "#fff",
+                          letterSpacing: "-0.012em",
+                          marginBottom: 4,
+                        }}
+                      >
+                        {n.title}
+                      </p>
+                      <p
+                        style={{
+                          fontSize: 12,
+                          color: "#9a9a9a",
+                          lineHeight: 1.6,
+                          margin: 0,
+                          fontWeight: 300,
+                          wordBreak: "keep-all",
+                        }}
+                      >
+                        {n.sub}
+                      </p>
+                    </div>
+
+                    {/* connector — gold line between nodes */}
+                    {i < RSP_FLOW.length - 1 && (
+                      <>
+                        {/* desktop: horizontal line to the right of the node */}
+                        <span
+                          aria-hidden="true"
+                          className="hidden md:block"
+                          style={{
+                            position: "absolute",
+                            top: "50%",
+                            right: "calc(-1 * clamp(14px, 1.6vw, 20px))",
+                            width: "clamp(14px, 1.6vw, 20px)",
+                            height: 1,
+                            background: "rgba(196,169,110,0.45)",
+                          }}
+                        />
+                        {/* mobile: vertical chevron between stacked nodes */}
+                        <span
+                          aria-hidden="true"
+                          className="md:hidden"
+                          style={{
+                            display: "block",
+                            textAlign: "center",
+                            color: "rgba(196,169,110,0.55)",
+                            fontSize: 12,
+                            lineHeight: 1,
+                            margin: "2px 0",
+                          }}
+                        >
+                          ↓
+                        </span>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Right label — RECONSTRUCTABLE STATE */}
+              <div
+                style={{
+                  flexShrink: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily:
+                      "ui-monospace, SFMono-Regular, Menlo, monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase" as const,
+                    color: "#c4a96e",
+                    fontWeight: 500,
+                    textAlign: "right",
+                    wordBreak: "keep-all",
+                  }}
+                >
+                  Reconstructable State
+                </span>
+              </div>
+            </div>
+          </div>
+        </Fade>
+
+        {/* Core quote */}
+        <Fade delay={160}>
+          <div
+            style={{
+              maxWidth: 820,
+              marginBottom: "clamp(72px, 9vw, 104px)",
+              paddingLeft: "clamp(16px, 2vw, 22px)",
+              borderLeft: "2px solid #c4a96e",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "clamp(17px, 1.9vw, 21px)",
+                fontWeight: 300,
+                letterSpacing: "-0.012em",
+                lineHeight: 1.55,
+                color: "#e6e6e6",
+                margin: 0,
+                fontStyle: "italic",
+              }}
+            >
+              &ldquo;AXVELA neither collapses uncertainty into false certainty,
+              nor fabricates detail into false reality.&rdquo;
+            </p>
+          </div>
+        </Fade>
+
+        {/* ── Block 2 · 4 Core Pillars ── */}
+        <div
+          style={{
+            paddingTop: "clamp(40px, 5vw, 64px)",
+            borderTop: "1px solid #1a1a1a",
+            marginBottom: "clamp(64px, 8vw, 96px)",
+          }}
+        >
+          <Fade>
+            <h3
+              style={{
+                fontSize: "clamp(20px, 2.4vw, 28px)",
+                fontWeight: 500,
+                letterSpacing: "-0.022em",
+                lineHeight: 1.3,
+                color: "#fff",
+                marginBottom: 8,
+              }}
+            >
+              Four core pillars.
+            </h3>
+            <p
+              style={{
+                fontSize: 13,
+                color: "#888",
+                letterSpacing: "0.01em",
+                marginBottom: "clamp(36px, 5vw, 56px)",
+                wordBreak: "keep-all",
+              }}
+            >
+              네 가지 핵심 축.
+            </p>
+          </Fade>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4"
+            style={{ gap: "clamp(16px, 2vw, 20px)" }}
+          >
+            {RSP_PILLARS.map((p, i) => (
+              <Fade key={p.title} delay={i * 80}>
+                <div
+                  style={{
+                    position: "relative",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    borderRadius: 14,
+                    padding: "36px 28px",
+                    height: "100%",
+                    background: "rgba(255,255,255,0.015)",
+                    overflow: "hidden",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: 2,
+                      background: "#C4A96E",
+                    }}
+                  />
+                  <p
+                    style={{
+                      fontFamily:
+                        "ui-monospace, SFMono-Regular, Menlo, monospace",
+                      fontSize: 11,
+                      letterSpacing: "0.20em",
+                      color: "#c4a96e",
+                      fontWeight: 500,
+                      marginBottom: 18,
+                      marginTop: 6,
+                    }}
+                  >
+                    {p.num}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 600,
+                      color: "#fff",
+                      letterSpacing: "-0.018em",
+                      marginBottom: 6,
+                    }}
+                  >
+                    {p.title}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      color: "#9a9a9a",
+                      letterSpacing: "0.01em",
+                      marginBottom: 16,
+                      wordBreak: "keep-all",
+                    }}
+                  >
+                    {p.sub}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      color: "#c8c8c8",
+                      lineHeight: 1.7,
+                      margin: 0,
+                      fontWeight: 300,
+                      wordBreak: "keep-all",
+                    }}
+                  >
+                    {p.body}
+                  </p>
+                </div>
+              </Fade>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Block 3 · 4 Filed Patents ── */}
+        <div
+          style={{
+            paddingTop: "clamp(40px, 5vw, 64px)",
+            borderTop: "1px solid #1a1a1a",
+            marginBottom: "clamp(64px, 8vw, 96px)",
+          }}
+        >
+          <Fade>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "baseline",
+                gap: "10px 20px",
+                marginBottom: 8,
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: "clamp(20px, 2.4vw, 28px)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.022em",
+                  lineHeight: 1.3,
+                  color: "#fff",
+                  margin: 0,
+                }}
+              >
+                Patents Filed.
+              </h3>
+              <span
+                style={{
+                  fontFamily:
+                    "ui-monospace, SFMono-Regular, Menlo, monospace",
+                  fontSize: 11,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase" as const,
+                  color: "#c4a96e",
+                  fontWeight: 500,
+                }}
+              >
+                Filed · 출원 완료
+              </span>
+            </div>
+            <p
+              style={{
+                fontSize: 13,
+                color: "#888",
+                letterSpacing: "0.01em",
+                marginBottom: "clamp(36px, 5vw, 56px)",
+                wordBreak: "keep-all",
+              }}
+            >
+              출원 특허 4건.
+            </p>
+          </Fade>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4"
+            style={{ gap: "clamp(16px, 2vw, 20px)" }}
+          >
+            {RSP_PATENTS.map((p, i) => (
+              <Fade key={p.no} delay={i * 80}>
+                <div
+                  style={{
+                    position: "relative",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    borderRadius: 14,
+                    padding: "36px 28px",
+                    height: "100%",
+                    background: "rgba(255,255,255,0.015)",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: 2,
+                      background: "#C4A96E",
+                    }}
+                  />
+                  <p
+                    style={{
+                      fontFamily:
+                        "ui-monospace, SFMono-Regular, Menlo, monospace",
+                      fontSize: 11,
+                      letterSpacing: "0.20em",
+                      color: "#c4a96e",
+                      fontWeight: 500,
+                      marginBottom: 18,
+                      marginTop: 6,
+                    }}
+                  >
+                    {p.no}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      fontWeight: 600,
+                      color: "#fff",
+                      letterSpacing: "-0.012em",
+                      lineHeight: 1.5,
+                      marginBottom: 16,
+                      wordBreak: "keep-all",
+                      flex: 1,
+                    }}
+                  >
+                    {p.title}
+                  </p>
+                  <div
+                    style={{
+                      paddingTop: 14,
+                      borderTop: "1px solid rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: 10,
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase" as const,
+                        color: "#888",
+                        margin: "0 0 4px",
+                        fontWeight: 500,
+                      }}
+                    >
+                      Linked to
+                    </p>
+                    <p
+                      style={{
+                        fontSize: 13,
+                        color: "#c8c8c8",
+                        margin: 0,
+                        fontWeight: 500,
+                        letterSpacing: "-0.01em",
+                      }}
+                    >
+                      {p.linked}
+                    </p>
+                  </div>
+                </div>
+              </Fade>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Block 4 · Cluster strategy + closing line ── */}
+        <div
+          style={{
+            paddingTop: "clamp(40px, 5vw, 64px)",
+            borderTop: "1px solid #1a1a1a",
+          }}
+        >
+          <Fade>
+            <p
+              style={{
+                fontFamily:
+                  "ui-monospace, SFMono-Regular, Menlo, monospace",
+                fontSize: 11,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase" as const,
+                color: "#c4a96e",
+                fontWeight: 500,
+                marginBottom: 18,
+              }}
+            >
+              Cluster Strategy
+            </p>
+            <p
+              style={{
+                fontSize: "clamp(16px, 1.8vw, 19px)",
+                lineHeight: 1.7,
+                color: "#c8c8c8",
+                fontWeight: 300,
+                marginBottom: 18,
+                maxWidth: 880,
+                wordBreak: "keep-all",
+              }}
+            >
+              <span style={{ color: "#e6e6e6" }}>
+                Reality State Preservation + Identity + Evidence Lineage +
+                Temporal Drift + Trust Infrastructure
+              </span>
+              {" "}— 단일 특허가 아닌 특허 클러스터로 장기 진입장벽을
+              구축합니다.
+            </p>
+          </Fade>
+
+          <Fade delay={140}>
+            <div
+              style={{
+                marginTop: "clamp(40px, 5vw, 64px)",
+                paddingTop: "clamp(28px, 3.5vw, 40px)",
+                borderTop: "1px solid #1a1a1a",
+                maxWidth: 820,
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "clamp(22px, 2.6vw, 30px)",
+                  fontWeight: 500,
+                  letterSpacing: "-0.022em",
+                  lineHeight: 1.3,
+                  color: "#fff",
+                  margin: 0,
+                }}
+              >
+                We preserve reality, not files.
+              </p>
+            </div>
+          </Fade>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════
    4. ECOSYSTEM
 ════════════════════════════════════════ */
 function Ecosystem() {
@@ -3295,6 +3980,7 @@ export default function Home() {
         <AIGlass />
         <AxvelaID />
         <Passport />
+        <PatentPortfolio />
         <Ecosystem />
         <About />
         <Team />
