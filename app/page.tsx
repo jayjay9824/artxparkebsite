@@ -3756,7 +3756,7 @@ function Team() {
         </Fade>
 
         {/* ── Three advisors ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: 20 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: 20 }}>
 
           {/* 정영훈 */}
           <Fade>
@@ -3834,46 +3834,6 @@ function Team() {
                 }}
               >
                 → Removes legal risk in scaling
-              </p>
-            </div>
-          </Fade>
-
-          {/* 이복현 */}
-          <Fade delay={140}>
-            <div style={{ border: "1px solid var(--border)", borderRadius: 12, padding: "32px 28px" }}>
-              <div style={{ marginBottom: 20 }}>
-                <p style={{ fontSize: 17, fontWeight: 600, color: "var(--fg)", marginBottom: 4 }}>
-                  Bok-hyun Lee
-                </p>
-                <p
-                  style={{
-                    fontSize: 10,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase" as const,
-                    color: "var(--muted)",
-                    fontWeight: 500,
-                  }}
-                >
-                  Regulatory &amp; Finance Advisor
-                </p>
-              </div>
-              <div style={{ height: 1, background: "var(--border)", marginBottom: 20 }} />
-              <div style={{ marginBottom: 20 }}>
-                <TBullet>Seoul National University, Economics</TBullet>
-                <TBullet>Attorney / CPA</TBullet>
-                <TBullet>Former Financial Supervisory Service head</TBullet>
-              </div>
-              <p
-                style={{
-                  fontSize: 13,
-                  fontWeight: 500,
-                  color: "var(--fg)",
-                  borderTop: "1px solid var(--border)",
-                  paddingTop: 16,
-                  lineHeight: 1.6,
-                }}
-              >
-                → Enables institutional trust and expansion
               </p>
             </div>
           </Fade>
