@@ -83,6 +83,11 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/images/logo.jpg"],
   },
+  verification: {
+    other: {
+      "naver-site-verification": "98c8e627b50fc2b28521c8773f38a3e916b9cfc3",
+    },
+  },
 };
 
 export const viewport: Viewport = {
