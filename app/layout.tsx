@@ -1,11 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["300", "400"],
+  style: ["italic"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -102,7 +110,7 @@ export default function RootLayout({
   return (
     <html
       lang="ko"
-      className={`antialiased ${inter.variable} ${pretendard.variable}`}
+      className={`antialiased ${inter.variable} ${pretendard.variable} ${fraunces.variable}`}
     >
       <body className="min-h-full">{children}</body>
     </html>

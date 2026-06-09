@@ -84,6 +84,7 @@ function Nav() {
     ["Thesis", "#thesis"],
     ["AXVELA AI", "#axvela"],
     ["AXVELA VIEW", "#ai-glass"],
+    ["AXVELA MUSEUM", "#museum"],
     ["Passport", "#passport"],
     ["Ecosystem", "#ecosystem"],
     ["About", "#about"],
@@ -2060,6 +2061,232 @@ const PASSPORT_PILLARS = [
   },
 ];
 
+/* ════════════════════════════════════════
+   3.6  AXVELA MUSEUM
+════════════════════════════════════════ */
+function Museum() {
+  const rootRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const els = Array.from(root.querySelectorAll<HTMLElement>(".r"));
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const t = e.target as HTMLElement;
+            t.classList.add("in");
+            if (t.id === "pipe") {
+              setTimeout(() => t.classList.add("sweep"), 700);
+            }
+            io.unobserve(t);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    els.forEach((el, i) => {
+      el.style.transitionDelay = `${i * 80}ms`;
+      io.observe(el);
+    });
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <section className="museum" id="museum" ref={rootRef}>
+      <div className="inner">
+        {/* HEADER */}
+        <div className="r">
+          <span className="m-eyebrow">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="wm" src="/images/axvela-wordmark-gold.png" alt="AXVELA" />
+            MUSEUM
+          </span>
+          <h2 className="m-head">
+            Today&rsquo;s Culture,
+            <br />
+            <em>Tomorrow&rsquo;s Heritage.</em>
+          </h2>
+          <p className="m-sub">
+            박물관 앱이 아닙니다. <b>실물 문화유산을 스캔해 디지털로 영구 보존하고,</b> 누구나
+            어디서나 다시 경험하도록 축적하는 문화자산 플랫폼입니다.
+          </p>
+          <p className="lead">
+            K-Culture는 세계로 확산되지만, 한국 문화유산의 디지털 접점은 아직 부족합니다. 관심이
+            흩어지기 전에, <b>AXVELA MUSEUM이 그 관심을 장기 디지털 자산으로 전환합니다.</b>
+          </p>
+        </div>
+
+        {/* PIPELINE */}
+        <div className="pipe r" id="pipe">
+          <div className="stage lead-st">
+            <span className="idx">01</span>
+            <div className="visual">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/museum-heritage.png" alt="문화유산" />
+            </div>
+            <div className="k-en">Cultural Heritage</div>
+            <div className="k-kr">
+              실물 문화유산 — 회화 · 전적 · 공예 · 유물.
+              <br />
+              원본의 질감과 상태가 데이터의 출발점입니다.
+            </div>
+          </div>
+          <div className="stage">
+            <span className="idx">02</span>
+            <div className="visual">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/museum-scan.png" alt="AXVELA SCAN" />
+            </div>
+            <div className="k-en">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="wm" src="/images/axvela-wordmark.png" alt="AXVELA" />
+              SCAN
+            </div>
+            <div className="k-kr">초고해상도 비접촉 현장 디지털화.</div>
+            <ul className="st-pts">
+              <li>색 · 질감 · 미세 손상까지 캡처</li>
+              <li>현장 환경 · 상태 데이터 동시 수집</li>
+            </ul>
+          </div>
+          <div className="stage">
+            <span className="idx">03</span>
+            <div className="visual">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/museum-twin.png" alt="Digital Twin" />
+            </div>
+            <div className="k-en">Digital Twin</div>
+            <div className="k-kr">3D 디지털 트윈으로 영구 보존.</div>
+            <ul className="st-pts">
+              <li>시간이 지나도 변하지 않는 원본 기록</li>
+              <li>AXID — 작품별 디지털 식별 구조</li>
+            </ul>
+          </div>
+          <div className="stage">
+            <span className="idx">04</span>
+            <div className="visual">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/museum-app.png" alt="AXVELA MUSEUM" />
+            </div>
+            <div className="k-en">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="wm" src="/images/axvela-wordmark.png" alt="AXVELA" />
+              MUSEUM
+            </div>
+            <div className="k-kr">모바일 · 웹에서 어디서나 재경험.</div>
+            <ul className="st-pts">
+              <li>AI 도슨트가 작품 맥락까지 해설</li>
+              <li>관람 티켓 · 문화 여권으로 기록</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* EXPERIENCE */}
+        <div className="exp r">
+          <div className="exp-label">
+            <span className="on">ENTER</span>
+            <span className="sep">→</span>
+            <span className="on">EXPLORE</span>
+            <span className="sep">→</span>
+            <span className="on">LEARN</span>
+            <span className="sep">→</span>
+            <span className="on">SAVE</span>
+            <span className="sep">→</span>
+            <span className="on">SHARE</span>
+          </div>
+          <div className="exp-phones">
+            <div className="exp-phone">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/museum-ai-guide.png" alt="AI 도슨트" />
+              <div className="cap">
+                <div className="ko">AI 도슨트</div>
+                <div className="en">AI Guide</div>
+              </div>
+              <div className="desc">작품에 대해 물으면 AI가 시대 · 맥락까지 설명합니다.</div>
+            </div>
+            <div className="exp-phone">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/museum-ticket.png" alt="관람 티켓" />
+              <div className="cap">
+                <div className="ko">관람 티켓</div>
+                <div className="en">Viewing Ticket</div>
+              </div>
+              <div className="desc">방문과 관람을 디지털 티켓으로 남깁니다.</div>
+            </div>
+            <div className="exp-phone">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/museum-passport.png" alt="문화 여권" />
+              <div className="cap">
+                <div className="ko">문화 여권</div>
+                <div className="en">Cultural Passport</div>
+              </div>
+              <div className="desc">감상 · 학습 이력을 여권처럼 축적합니다.</div>
+            </div>
+          </div>
+          <p className="exp-foot">
+            경험은 단순 조회가 아니라 <b>감상 · 학습 · 기록 · 공유</b>로 이어집니다.
+          </p>
+          <p className="exp-note">* 화면은 서비스 컨셉 예시입니다.</p>
+        </div>
+
+        {/* STACK */}
+        <div className="stack r">
+          <span className="lbl">Built on the AXVELA stack</span>
+          <span className="it">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="wm" src="/images/axvela-wordmark.png" alt="AXVELA" />
+            SCAN
+          </span>
+          <span className="it">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="wm" src="/images/axvela-wordmark.png" alt="AXVELA" />
+            AI
+          </span>
+          <span className="it">AXID</span>
+          <span className="it">Viewing Ticket</span>
+          <span className="it">Cultural Passport</span>
+          <span className="it">AXpay Lite</span>
+        </div>
+
+        {/* ROADMAP */}
+        <div className="road r">
+          <div className="road-h">Expansion Roadmap</div>
+          <div className="road-line">
+            <div className="rstep">
+              <div className="rdot">01</div>
+              <div className="rt">Pilot Project</div>
+              <div className="rd">대표 문화유산 1개 주제</div>
+            </div>
+            <div className="rstep">
+              <div className="rdot">02</div>
+              <div className="rt">Museum &amp; Heritage</div>
+              <div className="rd">국 · 사립 박물관 · 문화재</div>
+            </div>
+            <div className="rstep">
+              <div className="rdot">03</div>
+              <div className="rt">Artist &amp; Art Data</div>
+              <div className="rd">갤러리 · 아트페어 연계</div>
+            </div>
+            <div className="rstep on">
+              <div className="rdot">04</div>
+              <div className="rt">Global K-Heritage</div>
+              <div className="rd">다국어 · 관광 · 교육</div>
+            </div>
+          </div>
+          <div className="road-foot">
+            Phase 1 &nbsp;→&nbsp; <b>Global Platform</b>
+          </div>
+        </div>
+
+        <p className="m-close r">
+          오늘의 문화를 <em>내일의 문화유산</em>으로.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function AxvelaID() {
   return (
     <section
@@ -3938,6 +4165,7 @@ export default function Home() {
         <AxvelaOverview />
         <WhyAxvela />
         <AIGlass />
+        <Museum />
         <AxvelaID />
         <Passport />
         <PatentPortfolio />
