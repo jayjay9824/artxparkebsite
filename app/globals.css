@@ -187,6 +187,10 @@ img {
   max-width: 1200px;
   margin: 0 auto;
 }
+/* safety: no child image exceeds its container width */
+.museum img {
+  max-width: 100%;
+}
 .museum .r {
   opacity: 0;
   transform: translateY(24px);
@@ -242,7 +246,7 @@ img {
 .museum .m-head {
   margin: 26px 0 0;
   font-weight: 500;
-  font-size: clamp(40px, 6.2vw, 76px);
+  font-size: clamp(34px, 6.2vw, 76px);
   line-height: 1.04;
   letter-spacing: -0.03em;
   color: var(--m-t-1);
@@ -665,6 +669,14 @@ img {
 @media (max-width: 560px) {
   .museum {
     padding: 96px 20px 100px;
+  }
+  /* eyebrow shrinks so "AXVELA MUSEUM" fits one line without clipping */
+  .museum .m-eyebrow {
+    font-size: 20px;
+    letter-spacing: 0.16em;
+  }
+  .museum .m-eyebrow .wm {
+    height: 21px;
   }
   .museum .pipe {
     grid-template-columns: 1fr;
