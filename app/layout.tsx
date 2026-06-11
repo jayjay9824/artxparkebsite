@@ -30,6 +30,13 @@ const SITE_TITLE = "ArtXpark — Physical Asset Intelligence Infrastructure";
 const SITE_DESCRIPTION =
   "AI generates. AXVELA verifies. AXVELA는 실물 문화 자산의 상태·이동·문화·거래를 하나의 검증 가능한 기록으로 잇는 데이터 인프라입니다. Physical Asset → Data → AI → Assetization.";
 
+// Korean-targeted Open Graph signals (네이버는 OG 태그를 검색 결과에 적극 활용).
+const OG_TITLE_KO = "아트엑스파크 ArtXpark | AXVELA";
+const OG_SITE_NAME_KO = "아트엑스파크 ArtXpark";
+const OG_DESCRIPTION_KO =
+  "아트엑스파크(ArtXpark)는 실물 문화 자산의 상태·이동·문화·거래를 하나의 검증 가능한 기록으로 잇는 AXVELA 데이터 인프라를 만드는 AI 기술 기업입니다. AI generates. AXVELA verifies.";
+const OG_IMAGE = "https://artxpark.com/images/logo.jpg";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -74,15 +81,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     url: SITE_URL,
-    siteName: "ArtXpark",
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
+    siteName: OG_SITE_NAME_KO,
+    title: OG_TITLE_KO,
+    description: OG_DESCRIPTION_KO,
     images: [
       {
-        url: "/images/logo.jpg",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "ArtXpark — Physical Asset Intelligence Infrastructure",
+        alt: OG_TITLE_KO,
       },
     ],
   },

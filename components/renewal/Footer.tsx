@@ -35,7 +35,8 @@ export default function Footer() {
           <a href="#contact">Contact</a>
         </div>
         <div className="foot-copy">
-          © 2026 ArtXpark Inc. All rights reserved. · Seoul, Republic of Korea
+          주식회사 아트엑스파크 (ArtXpark Inc.) · © 2026 ArtXpark Inc. All rights
+          reserved. · Seoul, Republic of Korea
         </div>
       </div>
     </footer>
