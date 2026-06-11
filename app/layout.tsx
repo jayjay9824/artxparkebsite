@@ -26,9 +26,10 @@ const pretendard = localFont({
 });
 
 const SITE_URL = "https://artxpark.com";
-const SITE_TITLE = "ArtXpark — Physical Asset Intelligence Infrastructure";
+const SITE_TITLE =
+  "ArtXpark 아트엑스파크 | AXVELA — Cultural Asset Data Infrastructure";
 const SITE_DESCRIPTION =
-  "AI generates. AXVELA verifies. AXVELA는 실물 문화 자산의 상태·이동·문화·거래를 하나의 검증 가능한 기록으로 잇는 데이터 인프라입니다. Physical Asset → Data → AI → Assetization.";
+  "아트엑스파크(ArtXpark)는 실물 문화 자산의 상태·이동·문화·거래를 하나의 검증 가능한 기록으로 잇는 AXVELA 데이터 인프라를 만드는 AI 기술 기업입니다. AI generates. AXVELA verifies. Physical Asset → Data → AI → Assetization.";
 
 // Korean-targeted Open Graph signals (네이버는 OG 태그를 검색 결과에 적극 활용).
 const OG_TITLE_KO = "아트엑스파크 ArtXpark | AXVELA";
@@ -46,6 +47,8 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   keywords: [
     "ArtXpark",
+    "아트엑스파크",
+    "아트엑스파크 주식회사",
     "AXVELA",
     "AXVELA AI",
     "AXVELA VIEW",
@@ -120,7 +123,22 @@ export default function RootLayout({
       lang="ko"
       className={`antialiased ${inter.variable} ${pretendard.variable} ${fraunces.variable}`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "ArtXpark",
+              alternateName: ["아트엑스파크", "주식회사 아트엑스파크", "AXVELA"],
+              url: "https://artxpark.com",
+              logo: "https://artxpark.com/images/logo.jpg",
+            }),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
