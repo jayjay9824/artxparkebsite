@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./renewal.css";
 
 const inter = Inter({
   subsets: ["latin"],
